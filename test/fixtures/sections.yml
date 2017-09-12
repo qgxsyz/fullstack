@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  section_name: MyString
+  is_exist_video: false
+  chapter_id: 1
+  content: MyText
+
+two:
+  section_name: MyString
+  is_exist_video: false
+  chapter_id: 1
+  content: MyText
