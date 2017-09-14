@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912152039) do
+ActiveRecord::Schema.define(version: 20170912153626) do
 
   create_table "answer_like_relationships", force: :cascade do |t|
     t.integer  "answer_id"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170912152039) do
   create_table "assignment_relationships", force: :cascade do |t|
     t.integer  "assignment_id"
     t.integer  "user_id"
-    t.boolean  "submit_state"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
