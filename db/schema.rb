@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912153626) do
-
+ActiveRecord::Schema.define(version: 20170916175638) do
+  
   create_table "answer_like_relationships", force: :cascade do |t|
     t.integer  "answer_id"
     t.integer  "user_id"
