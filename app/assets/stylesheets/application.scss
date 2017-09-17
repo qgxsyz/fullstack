@@ -17,3 +17,202 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+// 导航栏 start
+.navbar-default {
+   background-color: #212121;
+   border-color: #212121;
+   margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0; //圆角为0
+  }
+}
+.navbar-default .navbar-brand {
+  color: #fff; //字体颜色
+  padding: 10px 15px; //上下10px，左右15px
+  line-height: 30px; //文字行高
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #fff; //鼠标放置在链接上的文字颜色
+  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+}
+.navbar-default .navbar-nav > li > a{
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #d6d6d6;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #FF6F00;
+  background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  background-color: #FFE0B2;
+  color: #212121;
+}
+.mail-icon .message-badge {
+    background-color: #E74D45;
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    padding: 3px 6px;
+    font-family: Arial;
+    font-size: 12px;
+    transform: scale(0.75);
+}
+// 导航栏 end
+
+// banner start
+.jumbotron {
+  background-image:url('http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-542213.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+  padding-left: 30px;
+}
+@media screen and (min-width: 768px){
+  .jumbotron {
+      padding-left: 10%;
+  }
+}
+.title {
+  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+  max-width: 500px;//最大宽度
+  margin-top: 200px;//和顶部拉开距离
+  margin-bottom: 0;//这样就可以紧接息面的描述文字
+  border-top-right-radius: 3px;//右上角圆边
+  border-top-left-radius: 3px;//左上角圆边
+}
+.jumbotron h1, .jumbotron .h1 {
+    text-align: left;//文字左对齐
+    color: #222;  //字体颜色
+
+    padding: 50px 20px 0;//上50px，左右20px，下0
+}
+
+.jumbotron p {
+    margin: 0;//上下左右margin为0
+    font-size: 26px;//字体大小
+    max-width: 500px;//最大宽度
+    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    padding: 20px;//上下左右padding为20px
+    text-align:left;//文字左对齐
+    color: #222;//字体颜色
+
+    border-bottom-right-radius: 3px;//右下角圆边
+    border-bottom-left-radius: 3px;//左下角圆边
+}
+.btn-danger {
+    color: #fff;//字体颜色
+
+    background-color: #EF6C00;//背景颜色
+
+    border-color: #EF6C00;//边框颜色
+
+}
+
+.btn-danger:hover {
+    background-color: #E65100;//鼠标放置在btn上的背景颜色
+
+    border-color: #E65100;//鼠标放置在btn上的边框颜色
+
+}
+.btn-lg, .btn-group-lg > .btn {
+    padding: 8px 16px;//通过padding来决定btn的大小
+    font-size: 20px;//btn文字大小
+    letter-spacing: 3px;//调整文字间距
+    border-radius: 3px;//btn圆角
+    width: 200px;//这里用指定宽度把btn拉得更长
+}
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+// banner end
+
+//caption start
+.caption {
+  margin: 30px;
+  text-align: center;
+  top: 20px;
+}
+
+.thumbnail {
+    border: 0 none;
+    box-shadow: none;
+    margin-top: 60px;
+}
+//caption end
+
+// footer start
+footer .footer-section {
+    display: block;
+    width: 100%;
+    height: 275px;
+    background: #E0E0E0;
+    margin-top: 0;
+}
+footer .footer-section .footer-content .contact-line-block {
+    float: right;
+    width: 50%;
+    padding: 50px 0 0;
+}
+footer .footer-section .footer-content .des-block {
+    float: right;
+    width: 50%;
+    padding: 50px 0 0;
+}
+footer .footer-section .footer-content .des-block .column-block .column-center,
+footer .footer-section .footer-content .des-block .column-block .column-left,
+footer .footer-section .footer-content .des-block .column-block .column-right {
+    width: 33%;
+    float: left;
+    text-align: center;
+}
+footer .footer-section .footer-content .des-block .column-block .column-center .column-title,
+footer .footer-section .footer-content .des-block .column-block .column-left .column-title,
+footer .footer-section .footer-content .des-block .column-block .column-right .column-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+footer .footer-section .footer-content .des-block .column-block .column-center a,
+footer .footer-section .footer-content .des-block .column-block .column-left a,
+footer .footer-section .footer-content .des-block .column-block .column-right a {
+    color: #666;
+}
+footer .footer-section .footer-content .fline {
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(151,151,151,0.6);
+    clear: both;
+}
+footer .footer-section .footer-content .copyright-block {
+    text-align: center;
+}
+footer .footer-section .footer-content .copyright-block .copyright-content {
+    padding-top: 20px;
+}
+// footer end
