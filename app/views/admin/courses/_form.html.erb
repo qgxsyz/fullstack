@@ -1,0 +1,22 @@
+<%= simple_form_for [:admin, @course] do |f| %>
+
+  <div class="group">
+    <%= f.input :course_name %>
+  </div>
+
+  <% if @course.category? %>
+    <%= f.input :category, :label => "课程属性", :collection => ["开学前必做", "主修课程", "选修课程"], :checked => @course.category %>
+  <% else %>
+    <%= f.input :category, :label => "课程属性", :collection => ["开学前必做", "主修课程", "选修课程"] %>
+  <% end %>
+
+
+  <div class="group">
+    <%= f.input :course_img, as: :file %>
+  </div>
+
+  <%= f.input :is_locked, :label => "锁定课程"%>
+
+  <%= f.submit "提交", data: { disable_with: "提交中..." } %>
+
+<% end %>

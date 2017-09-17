@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>创客网后台管理系统</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag "admin/common" %>
+
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+      <div class="container">
+
+        <div class="row">
+          <%= render "common/admin_navbar" %>
+        </div>
+
+          <%= render "common/flashes" %>
+
+        <div class="row">
+          <div class="col-md-2">
+            <%= render 'common/admin_sidebar' %>
+          </div>
+          <div class="col-md-10">
+            <%= yield %>
+          </div>
+        </div>
+
+        <div class="row">
+          <%= render "common/footer" %>
+        </div>
+
+      </div>
+    </body>
+</html>

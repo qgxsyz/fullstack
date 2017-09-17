@@ -60,6 +60,8 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    root to: "dashboard#show"
     get 'dashboard', to: 'dashboard#show'
+    resources :courses
   end
 end

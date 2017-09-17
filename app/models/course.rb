@@ -11,4 +11,6 @@
 
 class Course < ApplicationRecord
   has_many :chapters
+
+  mount_uploader :course_img, ImageUploader
 end
