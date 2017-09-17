@@ -40,4 +40,7 @@ class User < ApplicationRecord
   has_many :answer_like_relationships
   has_many :liked_answers, :through => :answer_like_relationships, :source => :answer
 
+  def admin?
+    is_admin
+  end
 end
