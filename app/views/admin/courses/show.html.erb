@@ -1,0 +1,8 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3><%= @course.course_name %></h3>
+    <%= image_tag(@course.course_img.thumb.url) %>
+    <%= render_course_is_locked(@course) %>
+    <%= @course.category %>
+  </div>
+</div>
