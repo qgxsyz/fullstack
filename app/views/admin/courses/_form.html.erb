@@ -3,13 +3,7 @@
   <div class="group">
     <%= f.input :course_name, label: "课程名称" %>
   </div>
-
-  <% if @course.category? %>
-    <%= f.input :category, label: "课程属性", collection: ["开学前必做", "主修课程", "选修课程"], checked: @course.category %>
-  <% else %>
-    <%= f.input :category, label: "课程属性", collection: ["开学前必做", "主修课程", "选修课程"] %>
-  <% end %>
-
+  <%= f.input :category, label: "课程属性", collection: Course::CATEGORY.map{ |c| [render_course_category(c), c] }, checked: @course.category, placeholder: '请选择' %>
 
   <div class="group">
     <%= f.input :course_img, as: :file, label: "课程配图"%>

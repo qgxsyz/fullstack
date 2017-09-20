@@ -63,5 +63,6 @@ Rails.application.routes.draw do
     root to: "dashboard#show"
     get 'dashboard', to: 'dashboard#show'
     resources :courses
+    resources :chapters
   end
 end
