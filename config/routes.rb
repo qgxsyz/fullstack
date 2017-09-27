@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # 学习中心
-  namespace :dashboard do
-    get :get_dashboard
-  end
+  # namespace :dashboard do
+  #   # get :get_dashboard
+  #   resources :courses
+  # end
+
+  resources :dashboard, only: [:index]
 
   # meetup
   resources :meetup_groups
@@ -60,6 +63,9 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    root to: "dashboard#show"
     get 'dashboard', to: 'dashboard#show'
+    resources :courses
+    resources :chapters
   end
 end

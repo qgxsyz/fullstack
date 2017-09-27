@@ -1,0 +1,79 @@
+<div class="dashboard-header">
+  <div class="user-info">
+      <div class="header-avatar">
+        <div class="user-avatar">
+          <a href="/account/users">
+            <%= image_tag "user_default_pic.jpg", { alt: "User default pic"} %>
+          </a>
+        </div>
+        <div class="vip-state">
+            <a title="" href="/account/vip_codes/new">
+              <%= image_tag "vip-member.png", {class:"vip-member" ,alt: "VIP 会员"} %>
+            </a>
+        </div>
+      </div>
+      <div class="header-text">
+        <h3>
+          <span class="username"><a href="/account/users"><%= current_user.email %></a></span>
+        </h3>
+      </div>
+  </div>
+</div>
+<div class="dashboard-content">
+  <div class="container">
+    <div class="row">
+      <!-- left-section -->
+      <div class="left-section">
+        <div class="left-section-card announcement">
+          <div class="card-header">
+            <a href="">最新通知</a>
+          </div>
+          <div class="card-body text">
+            <p>各位同学，高阶课程《Rails 网站效能》已经上线，<a href="">点击这里</a>开始学习。</p>
+          </div>
+        </div>
+      </div>
+      <!-- right-section -->
+      <div class="right-section">
+        <div class="course-content">
+          <div class="dashboard-tab col-xs-12">
+              <ul class="nav nav-tabs">
+                <li class="active"><a class="title " aria-current="page" href="/dashboard">全部课程</a></li>
+                <li><a class="title" href="/dashboard?category=basic">开学前必做</a></li>
+                <li><a class="title" href="/dashboard?category=major">主修课程</a></li>
+                <li><a class="title" href="/dashboard?category=optional">选修课程</a></li>
+              </ul>
+          </div>
+          <br>
+          <br>
+          <div class="all-course">
+            <% @courses.each do |course| %>
+              <a href="/courses/36/syllabus">
+              <div class="course-card-unlock">
+                <div class="title-cover"></div>
+                <div class="start-btn">
+                  <span>进入课程</span>
+                </div>
+                <div class="title">
+                  <h2><%= course.course_name %></h2>
+                </div>
+                <div class="course-img">
+                  <%= image_tag(course.course_img.thumb.url) %>
+                </div>
+                <div class="schedule-block">
+                  <p class="time">本课程不定期更新</p>
+                  <div class="percent-bar">
+                      <div class="progress" id="hover-status"></div>
+                  </div>
+                  <p class="task">共1个作业，已完成0个</p>
+                </div>
+              </div>
+            <% end %>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

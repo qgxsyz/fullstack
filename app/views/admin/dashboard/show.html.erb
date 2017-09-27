@@ -1,1 +1,40 @@
-<h1>Admin show</h1>
+<div class="content">
+  <div class="row">
+    <div class="span12">
+      <div class="group toolbar-normal clearfix">
+        <%= link_to(" 新增课程", new_admin_course_path, :class => "btn btn-primary fa fa-plus pull-right" ) %>
+      </div>
+      <div class="course-list">
+        <table class="table table-bordered table-hover">
+          <thead >
+              <tr class="active">
+                  <td>课程名</td>
+                  <td>配图</td>
+                  <td>是否锁定</td>
+                  <td>课程属性</td>
+                  <td>管理</td>
+              </tr>
+          </thead>
+          <tbody>
+            <% @courses.each do |course| %>
+            <tr>
+              <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
+              <td><%= image_tag(course.course_img.thumb.url) %></td>
+              <td><%= render_course_is_locked(course) %></td>
+              <td><%= render_course_category(course.category) %></td>
+              <td>
+                <%= link_to(edit_admin_course_path(course), :class => "btn btn-xs btn-default") do%>
+                <span class="fa fa-edit" title ="编辑"></span>
+              <% end %>
+              <%= link_to(admin_course_path(course), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
+                <span class="fa fa-remove" title="删除"></span>
+              <% end %>
+            </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

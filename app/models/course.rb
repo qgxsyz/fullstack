@@ -7,8 +7,15 @@
 #  course_img  :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category    :string
+#  is_locked   :boolean
 #
 
 class Course < ApplicationRecord
   has_many :chapters
+
+  mount_uploader :course_img, ImageUploader
+
+  CATEGORY = ['basic', 'major', 'optional']
+  validates_inclusion_of :category, in: CATEGORY
 end
