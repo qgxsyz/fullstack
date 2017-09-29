@@ -1,0 +1,199 @@
+// Place all the styles related to the admin/sections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.code-block {
+  background-color: #efefef;
+  padding: 7px 7px 7px 10px;
+  border: 1px solid #ddd;
+  // -moz-box-shadow: 3px 3px rgba(0,0,0,0.1);
+  // -webkit-box-shadow: 3px 3px rgba(0,0,0,0.1);
+  // box-shadow: 3px 3px rgba(0,0,0,0.1);
+  margin: 20px 0 20px 0;
+  overflow: hidden;
+}
+
+code {
+  font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+}
+
+.rouge-code .c { color: #586E75 } /* Comment */
+.rouge-code .err { color: #93A1A1 } /* Error */
+.rouge-code .g { color: #93A1A1 } /* Generic */
+.rouge-code .k { color: #859900 } /* Keyword */
+.rouge-code .l { color: #93A1A1 } /* Literal */
+.rouge-code .n { color: #93A1A1 } /* Name */
+.rouge-code .o { color: #859900 } /* Operator */
+.rouge-code .x { color: #CB4B16 } /* Other */
+.rouge-code .p { color: #93A1A1 } /* Punctuation */
+.rouge-code .cm { color: #586E75 } /* Comment.Multiline */
+.rouge-code .cp { color: #859900 } /* Comment.Preproc */
+.rouge-code .c1 { color: #586E75 } /* Comment.Single */
+.rouge-code .cs { color: #859900 } /* Comment.Special */
+.rouge-code .gd { color: #2AA198 } /* Generic.Deleted */
+.rouge-code .ge { color: #93A1A1; font-style: italic } /* Generic.Emph */
+.rouge-code .gr { color: #DC322F } /* Generic.Error */
+.rouge-code .gh { color: #CB4B16 } /* Generic.Heading */
+.rouge-code .gi { color: #859900 } /* Generic.Inserted */
+.rouge-code .go { color: #93A1A1 } /* Generic.Output */
+.rouge-code .gp { color: #93A1A1 } /* Generic.Prompt */
+.rouge-code .gs { color: #93A1A1; font-weight: bold } /* Generic.Strong */
+.rouge-code .gu { color: #CB4B16 } /* Generic.Subheading */
+.rouge-code .gt { color: #93A1A1 } /* Generic.Traceback */
+.rouge-code .kc { color: #CB4B16 } /* Keyword.Constant */
+.rouge-code .kd { color: #268BD2 } /* Keyword.Declaration */
+.rouge-code .kn { color: #859900 } /* Keyword.Namespace */
+.rouge-code .kp { color: #859900 } /* Keyword.Pseudo */
+.rouge-code .kr { color: #268BD2 } /* Keyword.Reserved */
+.rouge-code .kt { color: #DC322F } /* Keyword.Type */
+.rouge-code .ld { color: #93A1A1 } /* Literal.Date */
+.rouge-code .m { color: #2AA198 } /* Literal.Number */
+.rouge-code .s { color: #2AA198 } /* Literal.String */
+.rouge-code .na { color: #93A1A1 } /* Name.Attribute */
+.rouge-code .nb { color: #B58900 } /* Name.Builtin */
+.rouge-code .nc { color: #268BD2 } /* Name.Class */
+.rouge-code .no { color: #CB4B16 } /* Name.Constant */
+.rouge-code .nd { color: #268BD2 } /* Name.Decorator */
+.rouge-code .ni { color: #CB4B16 } /* Name.Entity */
+.rouge-code .ne { color: #CB4B16 } /* Name.Exception */
+.rouge-code .nf { color: #268BD2 } /* Name.Function */
+.rouge-code .nl { color: #93A1A1 } /* Name.Label */
+.rouge-code .nn { color: #93A1A1 } /* Name.Namespace */
+.rouge-code .nx { color: #555 } /* Name.Other */
+.rouge-code .py { color: #93A1A1 } /* Name.Property */
+.rouge-code .nt { color: #268BD2 } /* Name.Tag */
+.rouge-code .nv { color: #268BD2 } /* Name.Variable */
+.rouge-code .ow { color: #859900 } /* Operator.Word */
+.rouge-code .w { color: #93A1A1 } /* Text.Whitespace */
+.rouge-code .mf { color: #2AA198 } /* Literal.Number.Float */
+.rouge-code .mh { color: #2AA198 } /* Literal.Number.Hex */
+.rouge-code .mi { color: #2AA198 } /* Literal.Number.Integer */
+.rouge-code .mo { color: #2AA198 } /* Literal.Number.Oct */
+.rouge-code .sb { color: #586E75 } /* Literal.String.Backtick */
+.rouge-code .sc { color: #2AA198 } /* Literal.String.Char */
+.rouge-code .sd { color: #93A1A1 } /* Literal.String.Doc */
+.rouge-code .s2 { color: #2AA198 } /* Literal.String.Double */
+.rouge-code .se { color: #CB4B16 } /* Literal.String.Escape */
+.rouge-code .sh { color: #93A1A1 } /* Literal.String.Heredoc */
+.rouge-code .si { color: #2AA198 } /* Literal.String.Interpol */
+.rouge-code .sx { color: #2AA198 } /* Literal.String.Other */
+.rouge-code .sr { color: #DC322F } /* Literal.String.Regex */
+.rouge-code .s1 { color: #2AA198 } /* Literal.String.Single */
+.rouge-code .ss { color: #2AA198 } /* Literal.String.Symbol */
+.rouge-code .bp { color: #268BD2 } /* Name.Builtin.Pseudo */
+.rouge-code .vc { color: #268BD2 } /* Name.Variable.Class */
+.rouge-code .vg { color: #268BD2 } /* Name.Variable.Global */
+.rouge-code .vi { color: #268BD2 } /* Name.Variable.Instance */
+.rouge-code .il { color: #2AA198 } /* Literal.Number.Integer.Long */
+
+
+.post-container {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    background-color: #fff;
+    color: #333;
+    width: 960px;
+    min-height: 400px;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+    padding: 30px 60px;
+    border-radius: 1px;
+}
+
+
+.markdown {
+    font-family: "PT Serif", Georgia, Times, "Times New Roman", serif !important;
+}
+
+
+.markdown .code-block {
+	background-color: #ffffcc;
+	font-family: Menlo, Monaco, "Courier New", monospace;
+    font-size: 12px;
+    // background-color: #F5F5F5;
+    border: 0;
+    padding: 5px;
+    color: #444;
+    overflow: auto;
+    border-radius: 0;
+    margin: 0;
+}
+
+.markdown .code-block {
+	margin: 20px 0;
+	padding: 0;
+
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-family: "PT Serif", Georgia, Times, "Times New Roman", serif !important;
+}
+
+.markdown .code-block .code-header {
+	background-color: #fafbfc;
+    color: #666;
+    font: 90%/2.25 Monaco, Menlo, Consolas, "Courier New", monospace;
+    text-indent: 10.5px;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+    -moz-border-radius: 0.25em 0.25em 0 0;
+    -webkit-border-radius: 0.25em;
+    border-radius: 0.25em 0.25em 0 0;
+    // -moz-box-shadow: inset 0 0 0 1px #d9d9d9;
+    // -webkit-box-shadow: inset 0 0 0 1px #d9d9d9;
+    // box-shadow: inset 0 0 0 1px #d9d9d9;
+    border: 1px solid #eee;
+    font-size: 14px;
+}
+
+.rouge-code {
+	padding-left: 10px;
+}
+
+
+.markdown h1, h2 {
+	// border-bottom: 2px solid #eee;
+}
+
+.markdown h3 {
+	// border-bottom: 1px solid #eee;
+}
+
+.markdown img {
+	border: 1px solid rgba(50,50,50,0.32);
+	-webkit-box-shadow: 0 3px 6px 0 rgba(50,50,50,0.32);
+	-moz-box-shadow: 0 3px 6px 0 rgba(50,50,50,0.32);
+	box-shadow: 0 3px 6px 0 rgba(50,50,50,0.32);
+
+	vertical-align: top;
+    max-width: 100%;
+    width: auto;
+}
+
+.markdown .code-block .code-body{
+  padding: 5px 10px;
+  pre {
+   background-color: #ffffcc;
+   font-family: Menlo, Monaco, "Courier New", monospace;
+     // font-size: 16px;
+     // background-color: #F5F5F5;
+     border: 0;
+     padding: 5px;
+     color: #444;
+     overflow: auto;
+     border-radius: 0;
+     margin: 0;
+ }
+}
+
+.markdown .code-block .code-body .lineno{
+  color: rgba(27,31,35,0.3);
+}
+
+.markdown>*:not(.code-block) code {
+    background-color: #ececec;
+    color: #d14;
+    font-size: 85%;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+    border: 1px solid #d9d9d9;
+    padding: 0.15em 0.3em;
+    border-radius: 4px;
+}
