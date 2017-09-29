@@ -1,3 +1,16 @@
-<h2> 新增课程 </h2>
+<!-- 面包屑 -->
+<ol class="breadcrumb">
+  <li><%= link_to("首页", admin_dashboard_path) %></li>
+  <li class="active">新增课程</li>
+</ol>
 
-<%= render "form" %>
+<div class="panel panel-default">
+  <!-- <div class="panel-heading">
+    <h3 class="panel-title">新增课程</h3>
+  </div> -->
+  <div class="panel-body">
+    <div class="form-wrap">
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

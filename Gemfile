@@ -42,6 +42,9 @@ gem 'annotate', require: false
 # 上传图片
 gem 'carrierwave'
 gem 'mini_magick'
+# markdown解析与渲染
+gem 'redcarpet'
+gem 'rouge'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

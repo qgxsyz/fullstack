@@ -1,8 +1,16 @@
+<!-- 面包屑 -->
+<ol class="breadcrumb">
+  <li><%= link_to("首页", admin_dashboard_path) %></li>
+  <li class="active">修改课程</li>
+</ol>
+
 <div class="panel panel-default">
-  <div class="panel-heading">
+  <!-- <div class="panel-heading">
     <h3 class="panel-title">修改课程</h3>
-  </div>
+  </div> -->
   <div class="panel-body">
-    <%= render "form" %>
+    <div class="form-wrap">
+      <%= render "form" %>
+    </div>
   </div>
 </div>

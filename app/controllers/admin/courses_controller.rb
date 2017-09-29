@@ -1,7 +1,6 @@
 class Admin::CoursesController < ApplicationController
   layout 'admin'
 
-
   def new
     @course = Course.new
   end
@@ -22,6 +21,7 @@ end
 
  def show
   @course = Course.find(params[:id])
+  @chapters = @course.chapters
 end
 
 def update
