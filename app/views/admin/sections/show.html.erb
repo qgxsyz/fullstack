@@ -12,5 +12,10 @@
   <% end %>
 </div>
 <div class="markdown">
-  	<%= markdown(@section.content) %>
+  <% if @section.content %>
+    <%= markdown(@section.content) %>
+  <% else %>
+    暂无内容
+  <% end %>
+
  </div>

@@ -56,6 +56,6 @@ class Admin::ChaptersController < ApplicationController
 
   private
   def chapter_params
-    params.require(:chapter).permit(:chapter_name)
+    params.require(:chapter).permit(:chapter_name, :learning_time)
   end
 end

@@ -2,7 +2,7 @@
 <%= simple_form_for [:admin, @course, @chapter] do |f| %>
 
     <%= f.input :chapter_name, label: "章节名称" %>
-
+    <%= f.input :learning_time, label: "预计学习时间" %>
   <%= f.submit "提交", data: { disable_with: "提交中..." } %>
 
 <% end %>
