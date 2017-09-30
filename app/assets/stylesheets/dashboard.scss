@@ -135,7 +135,8 @@
       width: 810px;
   }
 }
-.all-course .course-card-unlock {
+.all-course .course-card-unlock ,
+.all-course .course-card-lock {
     height: 235px;
     width: 220px;
     float: left;
@@ -144,6 +145,7 @@
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.24);
     position: relative;
 }
+.all-course .course-card-lock .title-cover ,
 .all-course .course-card-unlock .title-cover {
     position: absolute;
     z-index: 11;
@@ -152,6 +154,7 @@
     margin-top: 125px;
     background: rgba(255,255,255,0.8);
 }
+.all-course .course-card-lock .start-btn ,
 .all-course .course-card-unlock .start-btn {
     position: absolute;
     z-index: 95;
@@ -161,6 +164,7 @@
     display: none;
     background: rgba(255,255,255,0.8);
 }
+.all-course .course-card-lock .start-btn span ,
 .all-course .course-card-unlock .start-btn span {
     display: block;
     margin-top: 75px;
@@ -174,10 +178,12 @@
     background: rgba(30,204,149,0.96);
     border-radius: 4px;
 }
+.all-course .course-card-lock .title ,
 .all-course .course-card-unlock .title {
     position: absolute;
     z-index: 12;
 }
+.all-course .course-card-lock .title h2 ,
 .all-course .course-card-unlock .title h2 {
     margin-top: 125px;
     font-size: 15px;
@@ -190,14 +196,17 @@
 .all-course .course-card-unlock:hover .title h2 {
     color: #000;
 }
+.all-course .course-card-lock .course-img ,
 .all-course .course-card-unlock .course-img {
     position: absolute;
     z-index: 10;
 }
+.all-course .course-card-lock .course-img img ,
 .all-course .course-card-unlock .course-img img {
     width: 220px;
     height: 165px;
 }
+.all-course .course-card-lock .schedule-block ,
 .all-course .course-card-unlock .schedule-block {
     border-top: 1px solid #DEDEDE;
     position: absolute;
@@ -211,14 +220,23 @@
 .all-course .course-card-unlock:hover .title-cover {
     display: none;
 }
+.all-course .course-card-lock .start-btn .position{
+    margin-top: 80px;
+}
+.all-course .course-card-lock .start-btn .position i{
+    font-size: 50px;
+}
+.all-course .course-card-lock .start-btn ,
 .all-course .course-card-unlock:hover .start-btn {
     display: block;
 }
+.all-course .course-card-lock .schedule-block p.time ,
 .all-course .course-card-unlock .schedule-block p.time {
     font-size: 13px;
     text-align: left;
     color: #333;
 }
+.all-course .course-card-lock .schedule-block .progress ,
 .all-course .course-card-unlock .schedule-block .progress {
     overflow: hidden;
     background-color: #ccc;

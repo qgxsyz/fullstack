@@ -48,28 +48,52 @@
           <br>
           <div class="all-course">
             <% @courses.each do |course| %>
-              <a href="/courses/36/syllabus">
-              <div class="course-card-unlock">
-                <div class="title-cover"></div>
-                <div class="start-btn">
-                  <span>进入课程</span>
-                </div>
-                <div class="title">
-                  <h2><%= course.course_name %></h2>
-                </div>
-                <div class="course-img">
-                  <%= image_tag(course.course_img.thumb.url) %>
-                </div>
-                <div class="schedule-block">
-                  <p class="time">本课程不定期更新</p>
-                  <div class="percent-bar">
-                      <div class="progress" id="hover-status"></div>
+              <% if !course.is_locked %>
+                <a href="/courses/36/syllabus">
+                  <div class="course-card-unlock">
+                  <div class="title-cover"></div>
+                  <div class="start-btn">
+                    <span>进入课程</span>
                   </div>
-                  <p class="task">共1个作业，已完成0个</p>
+                  <div class="title">
+                    <h2><%= course.course_name %></h2>
+                  </div>
+                  <div class="course-img">
+                    <%= image_tag(course.course_img.thumb.url) %>
+                  </div>
+                  <div class="schedule-block">
+                    <p class="time">本课程不定期更新</p>
+                    <div class="percent-bar">
+                        <div class="progress" id="hover-status"></div>
+                    </div>
+                    <p class="task">共1个作业，已完成0个</p>
+                  </div>
                 </div>
-              </div>
+                </a>
+              <% else %>
+                <a href="javascript:;">
+                    <div class="course-card-lock">
+                    <div class="title-cover"></div>
+                    <div class="start-btn">
+                      <div class="position"><i class="fa fa-lock"></i></div>
+                    </div>
+                    <div class="title">
+                      <h2><%= course.course_name %></h2>
+                    </div>
+                    <div class="course-img">
+                      <%= image_tag(course.course_img.thumb.url) %>
+                    </div>
+                    <div class="schedule-block">
+                      <p class="time">本课程不定期更新</p>
+                      <div class="percent-bar">
+                          <div class="progress" id="hover-status"></div>
+                      </div>
+                      <p class="task">共1个作业，已完成0个</p>
+                    </div>
+                  </div>
+                </a>
+              <% end %>
             <% end %>
-            </a>
           </div>
         </div>
       </div>
@@ -77,3 +101,4 @@
     </div>
   </div>
 </div>
+<%= debug @courses.to_yaml %>
