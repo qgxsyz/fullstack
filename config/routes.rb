@@ -67,6 +67,11 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'dashboard#index'
 
     resources :courses do
+      member do
+        post :lock
+        post :unlock
+      end
+
       resources :chapters
     end
 

@@ -40,15 +40,15 @@
       </td>
       <td>
         <%= link_to(edit_admin_course_chapter_path(@course, chapter), :class => "btn btn-xs btn-default") do%>
-          <span class="fa fa-edit" title ="编辑章"></span>
+          <span class="fa fa-edit" title ="编辑章">章</span>
         <% end %>
 
         <%= link_to(admin_course_chapter_path(@course, chapter), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
-          <span class="fa fa-remove" title="删除章"></span>
+          <span class="fa fa-remove" title="删除章">章</span>
         <% end %>
 
         <%= link_to(new_admin_chapter_section_path(chapter), :class => "btn btn-xs btn-primary") do%>
-          <span class="fa fa-plus" title="新增小节"></span>
+          <span class="fa fa-plus" title="新增小节">节</span>
         <% end %>
     </td>
     </tr>

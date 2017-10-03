@@ -18,4 +18,16 @@ class Course < ApplicationRecord
 
   CATEGORY = ['basic', 'major', 'optional']
   validates_inclusion_of :category, in: CATEGORY
+
+
+  # 解锁
+  def unlock!
+    self.is_locked = false
+    self.save
+  end
+  # 锁定
+  def lock!
+    self.is_locked = true
+    self.save
+  end
 end
