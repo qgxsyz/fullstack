@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
 
+  #文章
+  resources :posts, only: [:show]
+
   # meetup
   resources :meetup_groups
 
