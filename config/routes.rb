@@ -83,4 +83,8 @@ Rails.application.routes.draw do
     end
 
   end
+
+  # 路径错误 提示页面
+  match '*path', to: 'application#routing_error', via: :all
+  
 end

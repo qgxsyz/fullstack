@@ -166,6 +166,42 @@
 }
 //caption end
 
+//错误页面 start
+.common-block {
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+}
+.error-block {
+    padding-top: 100px;
+    min-height: 400px;
+    text-align: center;
+}
+.error-block h1 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    color: #727272;
+}
+.btn-link {
+    background-color: transparent;
+    border: 1px solid rgba(30,204,149,0.86);
+    border-radius: 3px;
+    color: #1ecd97;
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 5px 15px;
+}
+.btn-right {
+    margin-left: 15px;
+}
+.btn-link:active, .btn-link:focus, .btn-link:hover {
+    background-color: rgba(30,204,149,0.86);
+    text-decoration: none;
+    color: #fff;
+}
+//错误页面 end
+
 // footer start
 footer .footer-section {
     display: block;
