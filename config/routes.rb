@@ -63,9 +63,21 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    root to: "dashboard#show"
-    get 'dashboard', to: 'dashboard#show'
-    resources :courses
-    resources :chapters
+    root to: "dashboard#index"
+    get 'dashboard', to: 'dashboard#index'
+
+    resources :courses do
+      member do
+        post :lock
+        post :unlock
+      end
+
+      resources :chapters
+    end
+
+    resources :chapters do
+      resources :sections
+    end
+
   end
 end

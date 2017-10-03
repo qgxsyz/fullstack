@@ -1,0 +1,21 @@
+<!-- 面包屑 -->
+<ol class="breadcrumb">
+  <li><%= link_to("首页", admin_dashboard_path) %></li>
+  <li><%= link_to("课程目录", admin_course_path(@section.chapter.course)) %></li>
+  <li class="active">小节详情</li>
+</ol>
+
+<h2>所属章节：<%= @section.chapter.chapter_name %></h2>
+<div class="pull-right">
+  <%= link_to(edit_admin_chapter_section_path(@section.chapter, @section), :class => "btn btn-xs btn-default") do%>
+    <span class="fa fa-edit" title ="编辑"></span>
+  <% end %>
+</div>
+<div class="markdown">
+  <% if @section.content %>
+    <%= markdown(@section.content) %>
+  <% else %>
+    暂无内容
+  <% end %>
+
+ </div>

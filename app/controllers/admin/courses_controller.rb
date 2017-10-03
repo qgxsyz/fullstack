@@ -1,7 +1,6 @@
 class Admin::CoursesController < ApplicationController
   layout 'admin'
 
-
   def new
     @course = Course.new
   end
@@ -22,6 +21,7 @@ end
 
  def show
   @course = Course.find(params[:id])
+  @chapters = @course.chapters
 end
 
 def update
@@ -39,6 +39,18 @@ def destroy
     redirect_to admin_dashboard_path
   end
 
+  # 解锁
+  def unlock
+    @course = Course.find(params[:id])
+    @course.unlock!
+    redirect_to :back
+  end
+  # 锁定
+  def lock
+    @course = Course.find(params[:id])
+    @course.lock!
+    redirect_to :back
+  end
 
  private
 

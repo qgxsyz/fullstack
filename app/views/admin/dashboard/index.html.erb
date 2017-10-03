@@ -1,0 +1,57 @@
+<div class="content">
+    <div class="group toolbar-normal clearfix">
+      <%= link_to(" 新增课程", new_admin_course_path, :class => "btn btn-primary fa fa-plus pull-right" ) %>
+    </div>
+    <div class="course-list">
+      <table class="table table-bordered table-hover">
+        <thead >
+            <tr class="active">
+                <td>状态</td>
+                <td>课程名</td>
+                <td>配图</td>
+                <td>课程属性</td>
+                <td>课程管理</td>
+            </tr>
+        </thead>
+        <tbody>
+          <% @courses.each do |course| %>
+          <tr>
+            <td>
+              <% if course.is_locked %>
+                <%= link_to(unlock_admin_course_path(course) , :method => :post, :class => "btn btn-xs btn-default") do%>
+                  <span class="fa fa-lock" title="点击解锁该课程"></span>
+                <% end %>
+              <% else %>
+                <%= link_to(lock_admin_course_path(course), :method => :post,  :class => "btn btn-xs btn-default", style: "color: #33ccbf") do%>
+                <span class="fa fa-unlock-alt" title="点击锁定该课程"></span>
+                <% end%>
+              <% end %>
+            </td>
+
+            <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
+
+            <td>
+              <%= image_tag(course.course_img.thumb.url) %>
+            </td>
+
+            <td><%= render_course_category(course.category) %></td>
+
+            <td>
+              <%= link_to(edit_admin_course_path(course), :class => "btn btn-xs btn-default") do%>
+                <span class="fa fa-edit" title ="编辑">课</span>
+              <% end %>
+
+              <%= link_to(admin_course_path(course), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
+                <span class="fa fa-remove" title="删除">课</span>
+              <% end %>
+
+              <%= link_to(new_admin_course_chapter_path(course), :class => "btn btn-xs btn-primary") do%>
+              <span class="fa fa-plus" title="新增章节">章</span>
+            <% end %>
+          </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>

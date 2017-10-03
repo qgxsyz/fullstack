@@ -13,7 +13,7 @@
 
 class Section < ApplicationRecord
   belongs_to :chapter
-  belongs_to :user
+  # belongs_to :user
   has_many :section_relationships
 
   #has_learned or has_collected TODO
