@@ -55,7 +55,7 @@ def destroy
  private
 
  def course_params
-   params.require(:course).permit(:course_name, :category, :is_locked, :course_img)
+   params.require(:course).permit(:course_name, :category, :is_locked, :course_img, :abstract)
  end
 
 end

@@ -3,11 +3,14 @@
   <div class="group">
     <%= f.input :course_name, label: "课程名称" %>
   </div>
+
   <%= f.input :category, label: "课程属性", collection: Course::CATEGORY.map{ |c| [render_course_category(c), c] }, checked: @course.category, placeholder: '请选择' %>
 
   <div class="group">
     <%= f.input :course_img, as: :file, label: "课程配图"%>
   </div>
+
+  <%= f.input :abstract, label: "课程简介" %>
 
   <%= f.input :is_locked, :label => "锁定课程"%>
 
