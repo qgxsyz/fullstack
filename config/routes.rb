@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
 
+  #文章
+  resources :posts, only: [:show]
+
   # meetup
   resources :meetup_groups
 
@@ -80,4 +83,8 @@ Rails.application.routes.draw do
     end
 
   end
+
+  # 路径错误 提示页面
+  match '*path', to: 'application#routing_error', via: :all
+  
 end
