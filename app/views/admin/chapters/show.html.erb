@@ -1,8 +1,14 @@
-<div class="panel panel-default">
-  <div class="panel-body">
+<!-- 面包屑 -->
+<ol class="breadcrumb">
+  <li><%= link_to("首页", admin_dashboard_path) %></li>
+  <li><%= link_to("课程目录", admin_course_path(@chapter.course)) %></li>
+  <li class="active">章节详情</li>
+</ol>
 
-    <h3><%= @chapter.course.course_name %></h3>
-    <h3><%= @chapter.chapter_name %></h3>
-
-  </div>
-</div>
+<h3><%= @chapter.course.course_name %></h3>
+<h4><%= @chapter.chapter_name %></h4>
+<ul class="list-group">
+  <% @chapter.sections.each_with_index do |section, i| %>
+    <li class="list-group-item"><%= i+1 %>.<%= link_to(section.section_name, admin_chapter_section_path(@chapter, section)) %></li>
+  <% end %>
+</ul>
