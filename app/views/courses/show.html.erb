@@ -1,2 +1,90 @@
 <%= title "概览 - " %>
-<h3>课程简介</h3>
+<div class="course-menu">
+  <div class="container menu-content">
+
+    <div class="left-block hidden-xs">
+      <%= link_to(@course.course_name, course_path(@course)) %>
+    </div>
+
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+        <div class="input-block">
+          <form class="navbar-form" action="/courses/1/syllabus/search" method="get">
+            <div class="input-group">
+              <span class="input-group-btn search-btn">
+                <button type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+              <input type="text" name="q" value="" placeholder="搜索本课程教材">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <%= link_to course_path(@course) do %>
+              <i class="fa fa-television"></i>概览
+            <% end %>
+          </li>
+          <li>
+            <a href="/courses/1/syllabus">
+              <i class="fa fa-list-ul"></i>教材</a>
+          </li>
+          <li>
+            <a href="/courses/1/assignments">
+                <i class="fa fa-file-code-o"></i>作业
+            </a>
+          </li>
+          <li>
+            <a href="/courses/1/faqs">
+              <i class="fa fa-comments-o"></i>FAQ
+            </a>
+          </li>
+          <li>
+            <a href="/courses/1/activities">
+              <i class="fa fa-tags"></i>动态
+            </a>
+          </li>
+          <li>
+            <a href="/courses/1/leaderboard">
+              <i class="fa fa-star-o"></i>积分榜
+            </a>
+          </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrap">
+  <div class="container">
+    <div class="course-block">
+      <div class="course-des">
+        <h3><i class="fa fa-credit-card"></i>课程简介</h3>
+        <div class="purchase-course-lp">
+          <div><%= @course.course_name %></div>
+        </div>
+        <div class="course-action">
+          <a class="action-btn" href="/courses/75/syllabus">开始学习</a>
+        </div>
+        <hr>
+      </div>
+
+      <div class="operate-intro">
+        <h3>
+          <i class="fa fa-check-square-o"></i>操作提示
+        </h3>
+        <p>请按照教材目录的顺序学习，并完成相应的作业。</p>
+        <p>查看教材 Post 时，可以使用键盘左/右键进行上一页/下一页的切换。</p>
+        <p>课程中遇到问题可以先查看 FAQ 解答。</p>
+        <p>可以使用搜索功能快速查找本教材中的内容。</p>
+        <p>在动态里可以看到本课程其他同学提交的作业。</p>
+      </div>
+    </div>
+  </div>
+</div>
