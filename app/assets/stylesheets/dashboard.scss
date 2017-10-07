@@ -472,3 +472,49 @@ a:hover{
     font-weight: 900;
 }
 // 教材 end
+
+// 文章 start
+.post-visitor {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(176,190,197,0.65);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.post-visitor .des-text {
+    font-size: 14px;
+    float: left;
+}
+.post-visitor .des-text h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.post-visitor .des-text p {
+    line-height: 25px;
+    color: #666;
+}
+.view-count {
+    float: right;
+    margin-top: 54px;
+    color: #9B9B9B;
+}
+.post-title{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.post-title h3 {
+    float: left;
+    font-size: 26px;
+    font-weight: normal;
+}
+.favorite-icon-block {
+    display: inline-block;
+    // margin-top: 30px;
+    float: right;
+    height: 26px;
+}
+.favorite-icon-block span {
+    display: inline-block;
+    font-size: 26px;
+    color: #1ecd97;
+}
+// 文章 end

@@ -32,7 +32,7 @@
               <ul>
                 <% chapter.sections.each do |section| %>
                 <li>
-                  <%= link_to admin_chapter_section_path(chapter, section) do%>
+                  <%= link_to post_path(section) do%>
                     <!-- <i class="fa fa-circle" style="color:#1ecd97;"></i> -->
                     <i class="fa fa-circle-thin" style="color:#1ecd97;"></i>
                     <span class="text"><%= section.section_name %></span>
