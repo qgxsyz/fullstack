@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     rescue Exception => e
       render :template => "error/404/index.html.erb" #异常跳转
     else
+      # @chapters = @section.chapters
     end
   end
 end

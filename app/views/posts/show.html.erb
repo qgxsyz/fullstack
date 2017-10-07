@@ -10,13 +10,13 @@
           <% if @section.chapter.learning_time != nil %>
             <p>本章预计学习时间: <%= @section.chapter.learning_time %>小时</p>
           <% end %>
-          <p>再学习6节就可以完成本章了</p>
+          <p>再学习<%= @section.chapter.sections.length %>节就可以完成本章了</p>
         </div>
         <div class="view-count">共 386 位第二期同学学习了本节</div>
       </div>
 
       <div class="post-title">
-        <h3>课程如何运作</h3>
+        <h3><%= @section.section_name %></h3>
         <div id="favorite" class="favorite-icon-block">
             <a class="favorites-tooltip" title="收藏本节教材" href="/favorites?post_id=873">
               <span class="fa fa-bookmark-o"></span>
@@ -30,6 +30,49 @@
         <% else %>
           暂无内容
         <% end %>
+      </div>
+
+      <!-- 我要吐槽 start -->
+      <div class="panic-panel">
+        <div class="panic-panel-title">
+          <h4>对本页内容的感受如何？</h4>
+          <div class="complain-btn">
+            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
+              📣 &nbsp;我要吐槽
+            </button>
+          </div>
+        </div>
+
+        <div class="panic-panel-body ui-selectable" id="selectable" data-post-id="873">
+          <div class="item  ui-selectee" value="good">
+            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😄</span><span class="text ui-selectee">So easy</span></div>
+          </div>
+          <div class="item  ui-selectee" value="normal">
+            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😐</span><span class="text ui-selectee">还OK</span></div>
+          </div>
+          <div class="item  ui-selectee" value="bad">
+            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😭</span><span class="text ui-selectee">崩溃了</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- 我要吐槽 end -->
+
+      <div class="group post-nav-btn">
+        <ul class="pager-custom">
+          <li class="previous">
+            <a id="previous" href="/posts/57">
+              <i class="fa fa-arrow-left"></i>
+              <span> 上一页</span>
+            </a>
+          </li>
+          <li class="keyboard-tips">
+            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+            可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页
+          </li>
+          <li class="next">
+            <a href="/posts/59">下一页<span class="fa fa-arrow-right" id="next"></span></a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
