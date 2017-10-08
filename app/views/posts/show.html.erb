@@ -1,1 +1,36 @@
-<h3>文章</h3>
+<%= title "文章 - " %>
+<%= render :partial => "courses/course_item" %>
+
+<div class="content-wrap">
+  <div class="container">
+    <div class="course-block">
+      <div class="post-visitor">
+        <div class="des-text">
+          <h4>所属章节：<%= @section.chapter.chapter_name %></h4>
+          <% if @section.chapter.learning_time != nil %>
+            <p>本章预计学习时间: <%= @section.chapter.learning_time %>小时</p>
+          <% end %>
+          <p>再学习6节就可以完成本章了</p>
+        </div>
+        <div class="view-count">共 386 位第二期同学学习了本节</div>
+      </div>
+
+      <div class="post-title">
+        <h3>课程如何运作</h3>
+        <div id="favorite" class="favorite-icon-block">
+            <a class="favorites-tooltip" title="收藏本节教材" href="/favorites?post_id=873">
+              <span class="fa fa-bookmark-o"></span>
+            </a>
+        </div>
+      </div>
+
+      <div class="post markdown">
+        <% if @section.content %>
+          <%= markdown(@section.content) %>
+        <% else %>
+          暂无内容
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

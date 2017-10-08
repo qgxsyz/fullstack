@@ -49,7 +49,7 @@
           <div class="all-course">
             <% @courses.each do |course| %>
               <% if !course.is_locked %>
-                <a href="/courses/36/syllabus">
+                <%= link_to course_syllabus_path(course) do%>
                   <div class="course-card-unlock">
                   <div class="title-cover"></div>
                   <div class="start-btn">
@@ -69,7 +69,7 @@
                     <p class="task">共1个作业，已完成0个</p>
                   </div>
                 </div>
-                </a>
+                <% end %>
               <% else %>
                 <a href="javascript:;">
                     <div class="course-card-lock">
