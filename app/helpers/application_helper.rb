@@ -5,4 +5,11 @@ module ApplicationHelper
     content_for(:title) { page_title }
   end
 
+  def is_active?(category_name)
+    "active" if params[:category] == category_name
+  end
+
+  def is_all_course?
+    "active" if params[:category] ==  nil
+  end
 end
