@@ -253,3 +253,23 @@ footer .footer-section .footer-content .copyright-block .copyright-content {
     padding-top: 20px;
 }
 // footer end
+
+// 回到顶部
+#gotop {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: whitesmoke;
+  color: #666;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 6px;
+  cursor: pointer;
+  display: none; /*默认先隐藏掉*/
+}
+// 回到顶部 end
