@@ -1,0 +1,35 @@
+<table class="table table-bordered table-hover">
+  <thead >
+      <tr class="active">
+          <td>课程名</td>
+          <td>章名</td>
+          <td>节名</td>
+          <td>作业名</td>
+          <td>管理</td>
+      </tr>
+  </thead>
+  <tbody>
+    <% @assignments.each do |assignment| %>
+    <tr>
+      <td><%= link_to(assignment.section.chapter.course.course_name, admin_course_path(assignment.section.chapter.course)) %></td>
+      <td><%= link_to(assignment.section.chapter.chapter_name, admin_course_chapter_path(assignment.section.chapter.course, assignment.section.chapter)) %></td>
+      <td><%= link_to(assignment.section.section_name, admin_section_path(assignment.section)) %></td>
+      <td><%= link_to(assignment.assignment_name, admin_section_assignment_path(assignment.section, assignment)) %></td>
+
+      <td>
+        <%= link_to(edit_admin_section_assignment_path(assignment.section, assignment), :class => "btn btn-xs btn-default") do%>
+          <span class="fa fa-edit" title ="编辑作业">作</span>
+        <% end %>
+
+        <%= link_to(admin_section_assignment_path(assignment.section, assignment), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
+          <span class="fa fa-remove" title="删除作业">作</span>
+        <% end %>
+
+        <%= link_to(new_admin_section_assignment_path(assignment.section), :class => "btn btn-xs btn-primary") do%>
+          <span class="fa fa-plus" title="新增作业">作</span>
+        <% end %>
+    </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

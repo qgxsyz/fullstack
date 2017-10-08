@@ -78,13 +78,22 @@ Rails.application.routes.draw do
       resources :chapters
     end
 
+    # 节 crud
     resources :chapters do
       resources :sections
     end
+
+    # 作业 rd
+    resources :assignments, only: [:index, :show, :destroy]
+    # 作业 cu
+    resources :sections do
+      resources :assignments
+    end
+
 
   end
 
   # 路径错误 提示页面
   match '*path', to: 'application#routing_error', via: :all
-  
+
 end
