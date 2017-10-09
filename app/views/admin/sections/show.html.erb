@@ -8,7 +8,10 @@
 <h2>所属章节：<%= @section.chapter.chapter_name %></h2>
 <div class="pull-right">
   <%= link_to(edit_admin_chapter_section_path(@section.chapter, @section), :class => "btn btn-xs btn-default") do%>
-    <span class="fa fa-edit" title ="编辑"></span>
+    <span class="fa fa-edit" title ="编辑小节">节</span>
+  <% end %>
+  <%= link_to(new_admin_section_assignment_path(@section), :class => "btn btn-xs btn-default") do%>
+    <span class="fa fa-plus" title ="新增作业">作</span>
   <% end %>
 </div>
 <div class="markdown">
@@ -18,4 +21,32 @@
     暂无内容
   <% end %>
 
+ </div>
+
+ <div class="assignment-area">
+   <h3>本节作业</h3>
+   <ul class="list-group">
+     <% @section.assignments.each_with_index do |assignment, i| %>
+       <li class="list-group-item">
+         <div class="pull-right">
+           <%= link_to(edit_admin_section_assignment_path(@section, assignment), :class => "btn btn-xs btn-default") do%>
+             <span class="fa fa-edit" title ="编辑作业"></span>
+           <% end %>
+         </div>
+
+         <%= i+1 %>.
+         <!-- <%= link_to(assignment.assignment_name, admin_section_assignment_path(@section, assignment)) %> -->
+         <b><%= assignment.assignment_name %></b>
+         <% if assignment.assignment_name %>
+           <%= markdown(assignment.description) %>
+         <% else %>
+           暂无内容
+         <% end %>
+       </li>
+     <% end %>
+   </ul>
+ </div>
+
+ <div id="gotop">
+   <i class="fa fa-arrow-up" aria-hidden="true"></i>
  </div>
