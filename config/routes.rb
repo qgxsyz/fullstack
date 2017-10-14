@@ -89,8 +89,6 @@ Rails.application.routes.draw do
     resources :sections do
       resources :assignments
     end
-
-
   end
 
   # 路径错误 提示页面

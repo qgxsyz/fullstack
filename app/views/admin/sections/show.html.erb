@@ -24,7 +24,7 @@
  </div>
 
  <div class="assignment-area">
-   <h3>本节作业</h3>
+   <h3>本节作业(<%= @section.assignments_count %>)</h3>
    <ul class="list-group">
      <% @section.assignments.each_with_index do |assignment, i| %>
        <li class="list-group-item">
