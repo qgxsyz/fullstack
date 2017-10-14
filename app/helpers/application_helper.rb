@@ -22,16 +22,4 @@ module ApplicationHelper
     total_time
   end
 
-  #每个 课程总作业数
-  def totalAssignments(chapters)
-    total_assignment = 0 #课程作业数
-    chapter_assignment = 0 #章作业数
-    chapters.each do |chapter|
-      chapter.sections.each do |section|
-        chapter_assignment += section.assignments.length
-      end
-    end
-    total_assignment += chapter_assignment
-  end
-
 end

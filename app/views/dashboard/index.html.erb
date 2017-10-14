@@ -70,7 +70,7 @@
                     <div class="percent-bar">
                         <div class="progress" id="hover-status"></div>
                     </div>
-                    <p class="task">共<%= totalAssignments(course.chapters) %>个作业，已完成0个</p>
+                    <p class="task">共<%= course.assignments_count %>个作业，已完成0个</p>
                   </div>
                 </div>
                 <% end %>
@@ -96,7 +96,7 @@
                       <div class="percent-bar">
                           <div class="progress" id="hover-status"></div>
                       </div>
-                      <p class="task">共<%= totalAssignments(course.chapters) %>个作业，已完成0个</p>
+                      <p class="task">共<%= course.assignments_count %>个作业，已完成0个</p>
                     </div>
                   </div>
                 </a>
@@ -108,10 +108,4 @@
 
     </div>
   </div>
-</div>
-
-<div>
-  <% @courses.each do |course| %>
-    <p class="task"><%= totalAssignments(course.chapters) %></p>
-  <% end %>
 </div>
