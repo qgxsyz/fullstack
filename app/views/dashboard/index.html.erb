@@ -68,7 +68,13 @@
                       <p class="time">本课程不定期更新</p>
                     <% end %>
                     <div class="percent-bar">
+                      <% if course.assignments_count > 0 %>
+                        <div class="progress sh-progress-whole">
+                          <div class="progress-bar sh-progress-contents" style="width: <%= progressBar(1, course.assignments_count) %>%"><%= progressBar(1, course.assignments_count) %>%</div>
+                        </div>
+                      <% else %>
                         <div class="progress" id="hover-status"></div>
+                      <% end %>
                     </div>
                     <p class="task">共<%= course.assignments_count %>个作业，已完成0个</p>
                   </div>

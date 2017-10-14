@@ -22,4 +22,9 @@ module ApplicationHelper
     total_time
   end
 
+  #当前进度
+  def progressBar(num, total)
+    ((num.round(2) / total) * 100).to_i
+  end
+
 end
