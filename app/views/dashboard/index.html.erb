@@ -38,10 +38,10 @@
         <div class="course-content">
           <div class="dashboard-tab col-xs-12">
               <ul class="nav nav-tabs">
-                <li class="active"><a class="title " aria-current="page" href="/dashboard">全部课程</a></li>
-                <li><a class="title" href="/dashboard?category=basic">开学前必做</a></li>
-                <li><a class="title" href="/dashboard?category=major">主修课程</a></li>
-                <li><a class="title" href="/dashboard?category=optional">选修课程</a></li>
+                <li class="<%= is_all_course? %>"><a class="title " aria-current="page" href="/dashboard">全部课程</a></li>
+                <li class="<%= is_active?('basic') %>"><a class="title" href="/dashboard?category=basic">开学前必做</a></li>
+                <li class="<%= is_active?('major') %>"><a class="title" href="/dashboard?category=major">主修课程</a></li>
+                <li class="<%= is_active?('optional') %>"><a class="title" href="/dashboard?category=optional">选修课程</a></li>
               </ul>
           </div>
           <br>
