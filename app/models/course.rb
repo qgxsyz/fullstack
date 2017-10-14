@@ -30,4 +30,14 @@ class Course < ApplicationRecord
     self.is_locked = true
     self.save
   end
+
+  def assignments_count
+    count = 0
+    self.chapters.each_with_index{|chapter, index|
+      chapter.sections.each_with_index{|section, i|
+        count += section.assignments_count
+      }
+    }
+    count
+  end
 end
