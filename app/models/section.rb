@@ -20,4 +20,10 @@ class Section < ApplicationRecord
   has_many :members, through: :section_relationships, source: :user
 
   has_many :assignments
+
+  # 本节作业数
+  def assignments_count
+    self.assignments.length
+  end
+
 end

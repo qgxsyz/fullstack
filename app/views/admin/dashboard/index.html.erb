@@ -11,6 +11,7 @@
                 <td>配图</td>
                 <td>课程属性</td>
                 <td>课程简介</td>
+                <td>作业数</td>
                 <td>课程管理</td>
             </tr>
         </thead>
@@ -38,6 +39,8 @@
             <td><%= render_course_category(course.category) %></td>
 
             <td><%= course.abstract %></td>
+
+            <td><%= course.assignments_count %></td>
 
             <td>
               <%= link_to(edit_admin_course_path(course), :class => "btn btn-xs btn-default") do%>

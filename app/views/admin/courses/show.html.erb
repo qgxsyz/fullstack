@@ -33,6 +33,10 @@
           <% chapter.sections.each do |section| %>
           <li>
             <%= link_to(section.section_name, admin_chapter_section_path(chapter, section)) %>
+            <% if section.assignments_count > 0 %>
+              (共<%= section.assignments_count %>个作业)
+            <% end %>
+
           </li>
           <% end %>
         </ol>
