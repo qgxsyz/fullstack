@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   end
 
   # 节主体内容
-  resources :posts
+  # resources :posts
 
   # 作业
   resources :tasks do
