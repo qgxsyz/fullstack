@@ -15,13 +15,14 @@ module ApplicationHelper
 
   #每个 课程预计学习时间
   def totalLearningTime(chapters)
-    if chapters[0].learning_time != nil
-      total_time = 0 #总时间
-      chapters.each do |chapter|
+    total_time = 0 #总时间
+
+    chapters.each do |chapter|
+      if chapter.learning_time != nil
         total_time += chapter.learning_time
       end
-      total_time
     end
+    total_time
   end
 
   #当前进度
