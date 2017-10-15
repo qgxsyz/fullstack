@@ -43,16 +43,18 @@
                     <i class="fa fa-circle-thin" style="color:#1ecd97;"></i>
                     <span class="text"><%= section.section_name %></span>
                   <% end %>
-                  <div class="syllabus-task-area">
-                    <span class="hidden-xs task-count">共1个作业 |</span>
-                    <span class="task-btn">
-                      <a class="btn btn-default btn-sm" href="javascript:;">
-                        <i class="fa fa-star-o"></i>
-                        <span> 未完成</span></a>
-                        <!-- <i class="fa fa-star"></i>
-                        <span>  已完成</span></a> -->
-                    </span>
-                  </div>
+                  <% if section.assignments_count > 0 %>
+                    <div class="syllabus-task-area">
+                      <span class="hidden-xs task-count">共<%= section.assignments_count %>个作业 |</span>
+                      <span class="task-btn">
+                        <a class="btn btn-default btn-sm" href="javascript:;">
+                          <i class="fa fa-star-o"></i>
+                          <span> 未完成</span></a>
+                          <!-- <i class="fa fa-star"></i>
+                          <span>  已完成</span></a> -->
+                      </span>
+                    </div>
+                  <% end %>
                 </li>
                 <% end %>
               </ul>

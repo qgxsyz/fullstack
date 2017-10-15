@@ -635,3 +635,13 @@ a:hover{
     box-shadow: inset 0 -1px 0 #bbb;
 }
 // 文章 end
+//作业
+.post-faq-block,
+.post-task-block{
+  padding-top: 60px;
+}
+.post-task-block .fa-file-code-o{
+    color: #1ecd97;
+    margin-right: 5px;
+}
+//作业end

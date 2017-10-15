@@ -70,7 +70,7 @@
                     <div class="percent-bar">
                       <% if course.assignments_count > 0 %>
                         <div class="progress sh-progress-whole">
-                          <div class="progress-bar sh-progress-contents" style="width: <%= progressBar(1, course.assignments_count) %>%"><%= progressBar(1, course.assignments_count) %>%</div>
+                          <div class="progress-bar sh-progress-contents" style="width: <%= progressBar(0, course.assignments_count) %>%"><%= progressBar(0, course.assignments_count) %>%</div>
                         </div>
                       <% else %>
                         <div class="progress" id="hover-status"></div>
