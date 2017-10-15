@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
+source 'https://gems.ruby-china.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -46,7 +47,14 @@ gem 'mini_magick'
 gem 'redcarpet'
 gem 'rouge'
 
+gem 'mysql2'  # mysql2 和 pg 择一安装即可
+# gem 'pg'
+
 group :development, :test do
+  # 加入capistrano
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "rails-erd"
