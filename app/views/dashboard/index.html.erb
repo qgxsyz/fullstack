@@ -62,11 +62,21 @@
                     <%= image_tag(course.course_img.thumb.url) %>
                   </div>
                   <div class="schedule-block">
-                    <p class="time">本课程不定期更新</p>
+                    <% if totalLearningTime(course.chapters) > 0 %>
+                      <p class="time">预计学习时间：<%= totalLearningTime(course.chapters) %>小时</p>
+                    <% elsif %>
+                      <p class="time">本课程不定期更新</p>
+                    <% end %>
                     <div class="percent-bar">
+                      <% if course.assignments_count > 0 %>
+                        <div class="progress sh-progress-whole">
+                          <div class="progress-bar sh-progress-contents" style="width: <%= progressBar(1, course.assignments_count) %>%"><%= progressBar(1, course.assignments_count) %>%</div>
+                        </div>
+                      <% else %>
                         <div class="progress" id="hover-status"></div>
+                      <% end %>
                     </div>
-                    <p class="task">共1个作业，已完成0个</p>
+                    <p class="task">共<%= course.assignments_count %>个作业，已完成0个</p>
                   </div>
                 </div>
                 <% end %>
@@ -84,11 +94,15 @@
                       <%= image_tag(course.course_img.thumb.url) %>
                     </div>
                     <div class="schedule-block">
-                      <p class="time">本课程不定期更新</p>
+                      <% if totalLearningTime(course.chapters) > 0 %>
+                        <p class="time">预计学习时间：<%= totalLearningTime(course.chapters) %>小时</p>
+                      <% elsif %>
+                        <p class="time">本课程不定期更新</p>
+                      <% end %>
                       <div class="percent-bar">
                           <div class="progress" id="hover-status"></div>
                       </div>
-                      <p class="task">共1个作业，已完成0个</p>
+                      <p class="task">共<%= course.assignments_count %>个作业，已完成0个</p>
                     </div>
                   </div>
                 </a>
