@@ -260,6 +260,9 @@ a:hover{
     margin: 13px 0 5px;
     border-radius: 4px;
 }
+.all-course .percent-bar .sh-progress-contents{
+    background-color: #1ECD97;
+}
 
 .course-menu {
     display: block;
@@ -632,3 +635,13 @@ a:hover{
     box-shadow: inset 0 -1px 0 #bbb;
 }
 // 文章 end
+//作业
+.post-faq-block,
+.post-task-block{
+  padding-top: 60px;
+}
+.post-task-block .fa-file-code-o{
+    color: #1ecd97;
+    margin-right: 5px;
+}
+//作业end
