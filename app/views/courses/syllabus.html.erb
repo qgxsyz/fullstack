@@ -1,0 +1,69 @@
+<%= title "教材目录 - " %>
+<%= render :partial => "course_item" %>
+
+<div class="content-wrap">
+  <div class="container">
+    <div class="course-block">
+      <a href="/courses/28/assignments">
+        <div class="assignment-content" style="border-bottom: 1px solid #dedede;">
+          <h1>当前进度</h1>
+          <p>总共<%= @course.assignments_count %>个作业，已完成1个。</p>
+          <div class="small-progress-bar">
+            <% if @course.assignments_count > 0 %>
+              <div class="progress progress-length sh-progress-whole">
+                <div class="progress-bar sh-progress-contents" style="width: <%= progressBar(1, @course.assignments_count) %>%"><%= progressBar(1, @course.assignments_count) %>%</div>
+              </div>
+            <% else %>
+              <div class="progress">
+                <div class="progress-bar" style="width: 325px;background-color: #bdbdbd;">0%</div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </a>
+
+      <div class="group">
+        <div class="syllabus">
+          <div class="syllabus">
+            <% @chapters.each do |chapter| %>
+            <div class="list">
+              <div class="list-head">
+                <h3><%= chapter.chapter_name %></h3>
+                <% if chapter.learning_time != nil %>
+                  <div class="time">
+                    <span class="fa fa-clock-o"> 预计学习时间: <%= chapter.learning_time %>小时 </span>
+                  </div>
+                <% end %>
+              </div>
+              <ul>
+                <% chapter.sections.each do |section| %>
+                <li>
+                  <%= link_to post_path(section) do%>
+                    <!-- <i class="fa fa-circle" style="color:#1ecd97;"></i> -->
+                    <i class="fa fa-circle-thin" style="color:#1ecd97;"></i>
+                    <span class="text"><%= section.section_name %></span>
+                  <% end %>
+                  <% if section.assignments_count > 0 %>
+                    <div class="syllabus-task-area">
+                      <span class="hidden-xs task-count">共<%= section.assignments_count %>个作业 |</span>
+                      <span class="task-btn">
+                        <a class="btn btn-default btn-sm" href="javascript:;">
+                          <i class="fa fa-star-o"></i>
+                          <span> 未完成</span></a>
+                          <!-- <i class="fa fa-star"></i>
+                          <span>  已完成</span></a> -->
+                      </span>
+                    </div>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

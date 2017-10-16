@@ -2,6 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+}
+ul,ol {
+    list-style: none;
+}
+a{
+  color: #333;
+}
+a:hover{
+  color: #333;
+  text-decoration: none;
+}
+
 .dashboard-header {
     width: 100%;
     height: 250px;
@@ -245,3 +260,388 @@
     margin: 13px 0 5px;
     border-radius: 4px;
 }
+.all-course .percent-bar .sh-progress-contents{
+    background-color: #1ECD97;
+}
+
+.course-menu {
+    display: block;
+    width: 100%;
+    height: 65px;
+    background-color: rgba(255,255,255,0.94);
+    border-bottom: 1px solid #dedede;
+}
+.course-menu .menu-content{
+  padding-top: 30px;
+}
+.course-menu .left-block {
+    float: left;
+}
+.course-menu .left-block a {
+    color: #444;
+    font-size: 18px;
+}
+.course-menu .left-block a:hover {
+    text-decoration: none;
+}
+.course-menu .menu-content .search-block {
+    float: left;
+    padding-left: 20px;
+}
+.course-menu .menu-content .search-block .input-block {
+    float: left;
+    padding-top: 3px;
+    width: 170px;
+}
+.course-menu .menu-content .search-block .input-block .navbar-form {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.course-menu .menu-content .search-block .input-block span {
+    color: #888;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.course-menu .menu-content .search-block .input-block button {
+    padding: 3px 0;
+    width: 18px;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+    border: 0;
+    background-color: transparent;
+}
+.course-menu .menu-content .search-block .input-block input {
+    background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #dedede;
+    width: 140px;
+    letter-spacing: 1px;
+    outline: none;
+}
+.course-menu .menu-content .right-block {
+    float: right;
+    width: auto;
+    display: block;
+    height: 100%;
+}
+.course-menu .menu-content .right-block .tab_menu .nav {
+    padding-left: 0;
+    list-style: none;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs {
+    border-bottom: 2px solid transparent;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: -2px;
+}
+.course-menu .menu-content .right-block .tab_menu i {
+    margin-right: 8px;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li>a {
+    margin-right: 0;
+    padding: 0 5px 5px;
+    border: 0;
+    border-radius: 0;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs > li > a:hover{
+    background-color: transparent;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li>a:hover {
+    border-color: #98f0d5;
+}
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li.active>a,
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li.active>a:focus,
+.course-menu .menu-content .right-block .tab_menu .nav-tabs>li.active>a:hover {
+    cursor: default;
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid #1ecd97;
+}
+.content-wrap{
+  background: #fff;
+  padding: 20px 0;
+}
+.course-block {
+    // margin: 20px auto;
+    color: #333;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.25);
+    padding: 30px 40px;
+    border-radius: 1px;
+    background: #fff;
+}
+.course-des h3, .operate-intro h3 {
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.course-des i, .operate-intro i {
+    margin-right: 5px;
+    color: #1ecd97;
+}
+.operate-intro p{
+  margin-bottom: 6px;
+}
+.purchase-course-lp {
+    line-height: 28px;
+    min-height: 100px;
+    font-size: 14px;
+}
+.course-action{
+  text-align: center;
+}
+.action-btn{
+  padding: 12px 30px;
+  font-size: 18px;
+  background: #1ecd97;
+  color: #fff;
+  border-radius: 5px;
+}
+.action-btn:hover {
+  color: #fff;
+  background: #21e0a3;
+  text-decoration: none;
+}
+// 教材 start
+.assignment-content {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.assignment-content h1 {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #333;
+    float: left;
+}
+.assignment-content p {
+    margin-left: 30px;
+    float: left;
+    color: #333;
+    font-size: 1em;
+    margin-top: 4px;
+}
+.assignment-content .small-progress-bar {
+    float: right;
+}
+.assignment-content .small-progress-bar .sh-progress-contents {
+    background-color: #1ecd97;
+}
+.progress {
+    background-color: #e0e0e0;
+}
+.progress-length{
+    width: 325px;
+}
+.syllabus .list{
+  margin-bottom: 50px;
+}
+.syllabus .list-head{
+  padding-left: 15px;
+  min-height: 50px;
+  border-bottom: 1px solid #f7f0f0;
+}
+.syllabus .time{
+  font-size: 14px;
+  color: #888;
+  height: 40px;
+  line-height: 40px;
+}
+.syllabus li {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #f7f0f0;
+}
+.syllabus li .text{
+    margin-left: 10px;
+}
+.syllabus-task-area{
+    float: right;
+    margin-right: 15px;
+}
+.fa-star {
+    color: #1ecd97;
+    font-weight: 900;
+}
+// 教材 end
+
+// 文章 start
+.post-visitor {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(176,190,197,0.65);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.post-visitor .des-text {
+    font-size: 14px;
+    float: left;
+}
+.post-visitor .des-text h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.post-visitor .des-text p {
+    line-height: 25px;
+    color: #666;
+}
+.view-count {
+    float: right;
+    color: #9B9B9B;
+}
+.post-title{
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.post-title h3 {
+    float: left;
+    font-size: 26px;
+    font-weight: normal;
+}
+.favorite-icon-block {
+    display: inline-block;
+    // margin-top: 30px;
+    float: right;
+    height: 26px;
+}
+.favorite-icon-block span {
+    display: inline-block;
+    font-size: 26px;
+    color: #1ecd97;
+}
+
+// 我要吐槽
+.panic-panel {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(176,190,197,0.65);
+}
+.panic-panel .panic-panel-title {
+    margin-bottom: 35px;
+}
+.panic-panel .panic-panel-title h4 {
+    color: #666;
+    font-size: 18px;
+    font-weight: normal;
+    // margin-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.complain-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    margin-left: 10px;
+}
+.panic-panel .panic-panel-body {
+    padding: 0 30px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.panic-panel .panic-panel-body .item {
+    width: 160px;
+    height: 50px;
+    text-align: center;
+}
+.ui-selectee {
+    cursor: pointer;
+}
+.ui-widget-content {
+    color: #424242;
+    border: 1px solid transparent;
+    border-radius: 1px;
+}
+.ui-widget-content:hover {
+    border: 1px solid #1ecd97;
+}
+.panic-panel .panic-panel-body .item span.emoji {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2em;
+    padding-right: 5px;
+}
+.panic-panel .panic-panel-body .item span.text {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.post-nav-btn {
+    display: block;
+    border-top: 2px solid rgba(176,190,197,0.59);
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+.post-nav-btn .pager-custom {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+}
+.keyboard-tips {
+    font-size: 12px;
+    color: rgba(136,136,136,0.77);
+    line-height: 30px;
+}
+.post-nav-btn .pager-custom li {
+    display: inline;
+}
+.post-nav-btn .pager-custom li>a,
+.post-nav-btn .pager-custom li>span {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 3px;
+}
+.post-nav-btn .pager-custom .previous>a,
+.post-nav-btn .pager-custom .previous>span {
+    border: 1px solid #ddd;
+    color: #666;
+    background-color: #fff;
+    float: left;
+}
+.post-nav-btn .pager-custom .next>a,
+.post-nav-btn .pager-custom .next>span {
+    color: #fff;
+    background-color: #1ecd97;
+    border: 1px solid #1ecd97;
+    float: right;
+}
+.keyboard-tips kbd {
+    display: inline-block;
+    padding: 2px 4px;
+    line-height: 10px;
+    color: #888;
+    margin: -1px 3px 0;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+}
+// 文章 end
+//作业
+.post-faq-block,
+.post-task-block{
+  padding-top: 60px;
+}
+.post-task-block .fa-file-code-o{
+    color: #1ecd97;
+    margin-right: 5px;
+}
+//作业end

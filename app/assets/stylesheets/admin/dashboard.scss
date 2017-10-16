@@ -11,3 +11,25 @@ td{
     cursor: pointer;
   }
 }
+
+.content>h2 {
+  margin: 0px 0 20px;
+  color: #666;
+  font-size: 22px;
+  font-weight: 300;
+  .challenge-hot-title{
+    padding: 0 10px 0 0;
+    margin: 0px 0 20px;
+    color: #666;
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .challenge-tags {
+    padding: 3px 8px;
+}
+a {
+    color: #a4a4a4;
+    font-size: 16px;
+    text-decoration: none;
+}
+}

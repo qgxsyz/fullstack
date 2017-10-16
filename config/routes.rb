@@ -38,9 +38,8 @@ Rails.application.routes.draw do
 
   # 某个课程
   resources :courses do
-    namespace :syllabus do
-      get :get_syllabus
-    end
+    get 'syllabus', to: 'courses#get_syllabus'
+
     namespace :assignments do
       get :get_assignments
     end
@@ -56,7 +55,7 @@ Rails.application.routes.draw do
   end
 
   # 节主体内容
-  resources :posts
+  # resources :posts
 
   # 作业
   resources :tasks do

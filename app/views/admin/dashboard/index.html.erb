@@ -1,7 +1,13 @@
 <div class="content">
-    <div class="group toolbar-normal clearfix">
-      <%= link_to(" 新增课程", new_admin_course_path, :class => "btn btn-primary fa fa-plus pull-right" ) %>
-    </div>
+  <h2>
+    <a href="<%= admin_dashboard_path %>" class="challenge-hot-title">全部课程</a>
+    <a href="<%= admin_dashboard_path %>?category=basic" class="challenge-tags">开学前必做</a>
+    <a href="<%= admin_dashboard_path %>?category=major" class="challenge-tags">主修课程</a>
+    <a href="<%= admin_dashboard_path %>?category=optional" class="challenge-tags">选修课程</a>
+
+    <a href="<%= new_admin_course_path %>" class="pull-right" style="margin-top:7px;">新增课程</a>
+</h2>
+
     <div class="course-list">
       <table class="table table-bordered table-hover">
         <thead >
