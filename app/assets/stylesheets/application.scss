@@ -17,13 +17,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
-@import "dashboard";
+// @import "dashboard";
+
+.alert{
+  margin: 0;
+}
 
 // 导航栏 start
 .navbar-default {
-   background-color: #212121;
-   border-color: #212121;
+   background-color: #373d41;
+   border-color: #373d41;
    margin-bottom: 0;
+   a{
+     color: #fff;
+     text-decoration: none;
+   }
 }
 @media (min-width: 768px) {
   .navbar {
@@ -38,8 +46,8 @@
 
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #fff; //鼠标放置在链接上的文字颜色
-  background-color: transparent; //鼠标放置在链接上的背景颜色，这里设为透明
+  color: #fff;
+  background-color: #2a2f32;
 }
 .navbar-default .navbar-nav > li > a{
   color: #fff;
@@ -47,21 +55,21 @@
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #d6d6d6;
-  background-color: transparent;
+  color: #fff;
+  background-color: #2a2f32;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #FF6F00;
-  background-color: #FFE0B2;
+  color: #fff;
+  background-color: #2a2f32;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
-  background-color: #FFE0B2;
-  color: #212121;
+  background-color: #2a2f32;
+  color: #fff;
 }
 .mail-icon .message-badge {
     background-color: #E74D45;
