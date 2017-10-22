@@ -61,15 +61,6 @@ ActiveRecord::Schema.define(version: 20171004073356) do
     t.string   "abstract"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "quantity"
-    t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "section_relationships", force: :cascade do |t|
     t.integer  "section_id"
     t.integer  "user_id"
