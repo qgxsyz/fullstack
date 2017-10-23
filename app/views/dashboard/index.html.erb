@@ -59,7 +59,7 @@
                     <h2><%= course.course_name %></h2>
                   </div>
                   <div class="course-img">
-                    <%= image_tag(course.course_img.thumb.url) %>
+                    <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
                   </div>
                   <div class="schedule-block">
                     <% if totalLearningTime(course.chapters) > 0 %>
@@ -91,7 +91,7 @@
                       <h2><%= course.course_name %></h2>
                     </div>
                     <div class="course-img">
-                      <%= image_tag(course.course_img.thumb.url) %>
+                      <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
                     </div>
                     <div class="schedule-block">
                       <% if totalLearningTime(course.chapters) > 0 %>

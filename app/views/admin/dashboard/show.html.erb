@@ -19,7 +19,7 @@
             <% @courses.each do |course| %>
             <tr>
               <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
-              <td><%= image_tag(course.course_img.thumb.url) %></td>
+              <td><%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %></td>
               <td><%= render_course_is_locked(course) %></td>
               <td><%= render_course_category(course.category) %></td>
               <td>
