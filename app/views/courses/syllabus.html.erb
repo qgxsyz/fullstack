@@ -7,7 +7,9 @@
       <a href="/courses/28/assignments">
         <div class="assignment-content" style="border-bottom: 1px solid #dedede;">
           <h1>当前进度</h1>
-          <p>总共<%= @course.assignments_count %>个作业，已完成1个。</p>
+          <% if @course.assignments_count > 0%>
+            <p>总共<%= @course.assignments_count %>个作业，已完成1个。</p>
+          <% end %>
           <div class="small-progress-bar">
             <% if @course.assignments_count > 0 %>
               <div class="progress progress-length sh-progress-whole">
