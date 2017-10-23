@@ -39,7 +39,7 @@
             <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
 
             <td>
-              <%= image_tag(course.course_img.thumb.url) %>
+              <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
             </td>
 
             <td><%= render_course_category(course.category) %></td>

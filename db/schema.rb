@@ -12,38 +12,38 @@
 
 ActiveRecord::Schema.define(version: 20171004073356) do
 
-  create_table "answer_like_relationships", force: :cascade do |t|
+  create_table "answer_like_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "answer_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "answers", force: :cascade do |t|
+  create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "answer_id"
     t.integer  "user_id"
     t.integer  "assignment_id"
-    t.text     "content"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.text     "content",       limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
-  create_table "assignment_relationships", force: :cascade do |t|
+  create_table "assignment_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "assignment_id"
     t.integer  "user_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  create_table "assignments", force: :cascade do |t|
+  create_table "assignments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "assignment_name"
-    t.text     "description"
+    t.text     "description",     limit: 65535
     t.integer  "section_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
-  create_table "chapters", force: :cascade do |t|
+  create_table "chapters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "chapter_name"
     t.integer  "learning_time"
     t.integer  "course_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171004073356) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "courses", force: :cascade do |t|
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "course_name"
     t.string   "course_img"
     t.datetime "created_at",  null: false
@@ -61,16 +61,7 @@ ActiveRecord::Schema.define(version: 20171004073356) do
     t.string   "abstract"
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "quantity"
-    t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "section_relationships", force: :cascade do |t|
+  create_table "section_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "section_id"
     t.integer  "user_id"
     t.boolean  "has_learned"
@@ -80,16 +71,16 @@ ActiveRecord::Schema.define(version: 20171004073356) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "sections", force: :cascade do |t|
+  create_table "sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "section_name"
     t.boolean  "is_exist_video"
     t.integer  "chapter_id"
-    t.text     "content"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.text     "content",        limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -103,8 +94,8 @@ ActiveRecord::Schema.define(version: 20171004073356) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
