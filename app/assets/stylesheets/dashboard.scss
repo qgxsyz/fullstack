@@ -698,7 +698,6 @@ a:hover{
 .post-task-block .post-task-name p.count a {
     color: #666;
 }
-//Syz_123...
 .opt-btn {
     color: #666;
     background-color: transparent;
@@ -727,5 +726,14 @@ a:hover{
     color: #fff;
     background-color: #1ecd97;
     text-decoration: none;
+}
+.task-show-title h3{
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: normal;
+}
+.course-block .content-font{
+  margin-top: 10px;
 }
 //作业end

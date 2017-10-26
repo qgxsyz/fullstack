@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   # resources :posts
 
   # 作业
+  resources :tasks, only: [:show]
   resources :tasks do
     # 答案
     resources :other_answers
@@ -89,8 +90,5 @@ Rails.application.routes.draw do
       resources :assignments
     end
   end
-
-  # 路径错误 提示页面
-  match '*path', to: 'application#routing_error', via: :all
 
 end

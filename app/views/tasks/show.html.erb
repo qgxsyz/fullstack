@@ -1,0 +1,31 @@
+<%= title "作业 - " %>
+<%= render :partial => "courses/course_item" %>
+<div class="content-wrap">
+  <div class="container">
+    <div class="course-block">
+      <div class="task-show-title clearfix">
+        <h3 class="pull-left">
+          <%= @assignment.assignment_name %>
+        </h3>
+        <div class="pull-right">
+          已有 418 个第二期同学提交了这个作业
+          <a class="opt-btn" href="/tasks/273/other_answers?order=recent"><i class=""></i><span> 看看同学</span></a>
+
+        </div>
+      </div>
+      <br>
+      <div class="post-link">
+        <span>所属教材：</span><br>
+        <%= link_to(@chapter.chapter_name, post_path(@assignment.section)) %>
+      </div>
+
+      <div class="content-font">
+        <div>
+          <span>作业内容：</span>
+        </div>
+        <p><%= @assignment.description%></p>
+      </div>
+
+    </div>
+  </div>
+</div>

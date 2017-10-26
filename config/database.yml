@@ -15,7 +15,7 @@ development:
   database: fullstack
   pool: 5
   username: root
-  password: 123456
+  password: Syz_123...
   host: localhost
   port: 3306
 
