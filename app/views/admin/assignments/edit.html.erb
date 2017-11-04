@@ -1,20 +1,36 @@
-<!-- 面包屑 -->
-<ol class="breadcrumb">
-  <li><%= link_to("首页", admin_dashboard_path) %></li>
-  <li><%= link_to("课程目录", admin_course_path(@section.chapter.course)) %></li>
-  <li><%= link_to("小节详情", admin_chapter_section_path(@section.chapter, @section)) %></li>
-  <li class="active">新增小节作业</li>
-</ol>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    编辑小节作业
+    <small></small>
+  </h1>
 
-<h2><%= @section.chapter.chapter_name %> <%= @section.section_name %> 编辑小节作业</h2>
-<%= simple_form_for [:admin, @section, @assignment] do |f| %>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i> 首页</a></li>
+    <li><%= link_to("课程目录", admin_course_path(@section.chapter.course)) %></li>
+    <li><%= link_to("小节详情", admin_chapter_section_path(@section.chapter, @section)) %></li>
+    <li class="active">编辑小节作业</li>
+  </ol>
+</section>
 
-    <%= f.input :assignment_name, label: "作业名字" %>
-    <%= f.input :description, label: "作业描述"%>
+<!-- Main content -->
+<section class="content container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
 
-    <%= f.submit "提交", data: { disable_with: "提交中..." }, class: "btn btn-primary" %>
+        <div class="box-body">
+          <div class="form-wrap">
+            <%= render "form" %>
+          </div>
+        </div>
 
-<% end %>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+  </div>
+</section>
+
 
 <div id="gotop">
   <i class="fa fa-arrow-up" aria-hidden="true"></i>

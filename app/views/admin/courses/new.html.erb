@@ -1,16 +1,30 @@
-<!-- 面包屑 -->
-<ol class="breadcrumb">
-  <li><%= link_to("首页", admin_dashboard_path) %></li>
-  <li class="active">新增课程</li>
-</ol>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    新增课程
+    <small></small>
+  </h1>
 
-<div class="panel panel-default">
-  <!-- <div class="panel-heading">
-    <h3 class="panel-title">新增课程</h3>
-  </div> -->
-  <div class="panel-body">
-    <div class="form-wrap">
-      <%= render "form" %>
+  <ol class="breadcrumb">
+    <li><a href="/admin"><i class="fa fa-dashboard"></i> 首页</a></li>
+    <li class="active">新增课程</li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+
+        <div class="box-body">
+          <div class="form-wrap">
+            <%= render "form" %>
+          </div>
+        </div>
+
+      <!-- /.box -->
     </div>
+    <!-- /.col -->
   </div>
-</div>
+</section>

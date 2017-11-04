@@ -4,7 +4,7 @@ module Admin::DashboardHelper
     if course.is_locked
       content_tag(:span, " 锁定", class: "fa fa-lock")
     else
-      content_tag(:span, " 开放", class: "fa fa-unlock", style: "color: #33ccbf")
+      content_tag(:span, " 开放", class: "fa fa-unlock text-green")
     end
   end
 

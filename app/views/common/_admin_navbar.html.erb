@@ -1,33 +1,65 @@
-<nav class="navbar navbar-default admin-navbar" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header admin-navbar-header">
-            <a class="navbar-logo" href="/admin/"><i class="fa fa-diamond"></i> </a>
-            <a class="navbar-brand-text" href="/admin/">创课网后台</a>
-        </div>
+<header class="main-header">
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <% if !current_user %>
-                  <li><%= link_to("注册", new_user_registration_path) %> </li>
-                  <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
-                <% else %>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li> <%= link_to("客户端", root_path) %> </li>
-                        <li class="divider"></li>
-                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
-                    </ul>
-                  </li>
-                <% end %>
+    <!-- Logo -->
+    <a href="/admin" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>D</b>Y</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Admin</b>豆优</span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="javascript:void(0)" onclick="toggleSidebar()" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+
+          <!-- User Account Menu -->
+          <% if !current_user %>
+              <li><%= link_to("注册", new_user_registration_path) %> </li>
+              <li><%= link_to(content_tag(:i, '登入', class: 'fa fa-sign-in'), new_user_session_path) %></li>
+            <% else %>
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+              <!-- <%= image_tag "/vendor/assets/adminlte/dist/img/user2-160x160.jpg", class: "user-image", alt: "User Image" %> -->
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs"><%= current_user.email %></span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <%= link_to("客户端", root_path, class: "btn btn-default btn-flat") %>
+                </div>
+                <div class="pull-right">
+                  <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out btn btn-default btn-flat'), destroy_user_session_path, method: :delete) %>
+                </div>
+              </li>
             </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+          </li>
+          <% end %>
+          <!-- Control Sidebar Toggle Button -->
+          <!-- <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <script type="text/javascript">
+    function toggleSidebar(){
+      var is_sidebar_collapsed = $('body').hasClass('sidebar-collapse');
+      if (is_sidebar_collapsed) {
+        $('body').removeClass('sidebar-collapse');
+      } else {
+        $('body').addClass('sidebar-collapse');
+      }
+    }
+  </script>

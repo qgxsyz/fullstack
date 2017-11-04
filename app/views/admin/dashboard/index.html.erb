@@ -1,69 +1,98 @@
-<div class="content">
-  <h2>
-    <a href="<%= admin_dashboard_path %>" class="challenge-hot-title">全部课程</a>
-    <a href="<%= admin_dashboard_path %>?category=basic" class="challenge-tags">开学前必做</a>
-    <a href="<%= admin_dashboard_path %>?category=major" class="challenge-tags">主修课程</a>
-    <a href="<%= admin_dashboard_path %>?category=optional" class="challenge-tags">选修课程</a>
+<!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      课程管理
+      <small>管理学习中心的所有课程、目录和章节内容</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i> 首页</a></li>
+      <li class="active">课程管理</li>
+    </ol>
+  </section>
 
-    <a href="<%= new_admin_course_path %>" class="pull-right" style="margin-top:7px;">新增课程</a>
-</h2>
+  <%= link_to("新建课程", new_admin_course_path, class: "btn btn-primary pull-right", style: "margin: 15px") %>
 
-    <div class="course-list">
-      <table class="table table-bordered table-hover">
-        <thead >
-            <tr class="active">
-                <td>状态</td>
-                <td>课程名</td>
-                <td>配图</td>
-                <td>课程属性</td>
-                <td>课程简介</td>
-                <td>作业数</td>
-                <td>课程管理</td>
-            </tr>
-        </thead>
-        <tbody>
-          <% @courses.each do |course| %>
-          <tr>
-            <td>
-              <% if course.is_locked %>
-                <%= link_to(unlock_admin_course_path(course) , :method => :post, :class => "btn btn-xs btn-default") do%>
-                  <span class="fa fa-lock" title="点击解锁该课程"></span>
+  <!-- Main content -->
+  <section class="content container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+              <li class="pull-left header">课程列表</li>
+              <li class="<%= is_course_category_active(nil) %>"><a href="<%= admin_dashboard_path %>" class="challenge-hot-title">全部课程</a></li>
+              <li class="<%= is_course_category_active("basic") %>"><a href="<%= admin_dashboard_path %>?category=basic" class="challenge-tags">开学前必做</a></li>
+              <li class="<%= is_course_category_active("major") %>"><a href="<%= admin_dashboard_path %>?category=major" class="challenge-tags">主修课程</a></li>
+              <li class="<%= is_course_category_active("optional") %>"><a href="<%= admin_dashboard_path %>?category=optional" class="challenge-tags">选修课程</a></li>
+
+            </ul>
+
+            <div class="tab-content no-padding">
+              <div class="course-list">
+                <% if @courses.length == 0 %>
+                <p class="text-center" style="padding: 20px">comming soon...</p>
+                <% else %>
+                <table class="table">
+                  <thead >
+                      <tr class="active">
+                          <td>状态</td>
+                          <td>课程名</td>
+                          <td>配图</td>
+                          <td>课程属性</td>
+                          <td>课程简介</td>
+                          <td>作业数</td>
+                          <td>课程管理</td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <% @courses.each do |course| %>
+                    <tr>
+                      <td>
+                        <% if course.is_locked %>
+                          <%= link_to(unlock_admin_course_path(course) , :method => :post, :class => "btn btn-xs btn-default") do%>
+                            <span class="fa fa-lock" title="点击解锁该课程"></span>
+                          <% end %>
+                        <% else %>
+                          <%= link_to(lock_admin_course_path(course), :method => :post,  :class => "btn btn-xs btn-default", style: "color: #33ccbf") do%>
+                          <span class="fa fa-unlock-alt" title="点击锁定该课程"></span>
+                          <% end%>
+                        <% end %>
+                      </td>
+
+                      <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
+
+                      <td>
+                        <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
+                      </td>
+
+                      <td><%= render_course_category(course.category) %></td>
+
+                      <td><%= course.abstract %></td>
+
+                      <td><%= course.assignments_count %></td>
+
+                      <td>
+                        <%= link_to(edit_admin_course_path(course), :class => "btn btn-xs btn-default") do%>
+                          <span class="fa fa-edit" title ="编辑"> 编辑</span>
+                        <% end %>
+
+                        <%= link_to(admin_course_path(course), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
+                          <span class="fa fa-remove" title="删除"> 删除</span>
+                        <% end %>
+
+                    </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
                 <% end %>
-              <% else %>
-                <%= link_to(lock_admin_course_path(course), :method => :post,  :class => "btn btn-xs btn-default", style: "color: #33ccbf") do%>
-                <span class="fa fa-unlock-alt" title="点击锁定该课程"></span>
-                <% end%>
-              <% end %>
-            </td>
+              </div>
 
-            <td><%= link_to(course.course_name, admin_course_path(course)) %></td>
-
-            <td>
-              <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
-            </td>
-
-            <td><%= render_course_category(course.category) %></td>
-
-            <td><%= course.abstract %></td>
-
-            <td><%= course.assignments_count %></td>
-
-            <td>
-              <%= link_to(edit_admin_course_path(course), :class => "btn btn-xs btn-default") do%>
-                <span class="fa fa-edit" title ="编辑">课</span>
-              <% end %>
-
-              <%= link_to(admin_course_path(course), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
-                <span class="fa fa-remove" title="删除">课</span>
-              <% end %>
-
-              <%= link_to(new_admin_course_chapter_path(course), :class => "btn btn-xs btn-primary") do%>
-              <span class="fa fa-plus" title="新增章节">章</span>
-            <% end %>
-          </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+            </div>
+          </div>
+        <!-- /.box -->
+      </div>
+      <!-- /.col -->
     </div>
-</div>
+  </section>
+  <!-- /.content -->

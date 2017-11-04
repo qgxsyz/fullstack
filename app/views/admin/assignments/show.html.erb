@@ -1,18 +1,39 @@
-<!-- 面包屑 -->
-<ol class="breadcrumb">
-  <li><%= link_to("作业列表", admin_assignments_path) %></li>
-  <li class="active">作业详情</li>
-</ol>
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    章节详情
+  </h1>
 
-<div class="pull-right">
-  <%= link_to(edit_admin_section_assignment_path(@assignment.section, @assignment), :class => "btn btn-xs btn-default") do%>
-    <span class="fa fa-edit" title ="编辑作业"></span>
-  <% end %>
-</div>
+  <ol class="breadcrumb">
+    <li><%= link_to("首页", admin_dashboard_path) %></li>
+    <li><%= link_to("作业列表", admin_assignments_path) %></li>
+    <li class="active">作业详情</li>
+  </ol>
+</section>
 
-<h3><%= @assignment.assignment_name %></h3>
-<% if @assignment.assignment_name %>
-  <%= markdown(@assignment.description) %>
-<% else %>
-  暂无内容
-<% end %>
+<!-- Main content -->
+<section class="content container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-header">
+          <h3 class="box-title"><%= @assignment.assignment_name %></h3>
+          <div class="pull-right box-tools">
+            <%= link_to(edit_admin_section_assignment_path(@assignment.section, @assignment), :class => "btn btn-xs btn-default") do%>
+              <span class="fa fa-edit" title ="编辑作业"></span> 编辑
+            <% end %>
+          </div>
+        </div>
+        <div class="box-body">
+          <% if @assignment.assignment_name %>
+            <%= markdown(@assignment.description) %>
+          <% else %>
+            暂无内容
+          <% end %>
+        </div>
+
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+  </div>
+</section>

@@ -40,4 +40,8 @@ class Course < ApplicationRecord
     }
     count
   end
+
+  scope :basic, -> { where("category = 'basic'") }
+  scope :major, -> { where("category = 'major'") }
+  scope :optional, -> { where("category = 'optional'") }
 end

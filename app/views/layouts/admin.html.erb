@@ -6,31 +6,26 @@
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= stylesheet_link_tag "admin/common" %>
+        <%= stylesheet_link_tag "admin/common", media: 'all', 'data-turbolinks-track': 'reload' %>
 
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
     </head>
 
-    <body>
-      <%= render "common/flashes" %>
-      <%= render "common/admin_navbar" %>
-
-      <div role="main" class="container-fluid">
-        <div class="row main-content">
-          <div class="col-md-2">
-            <%= render 'common/admin_sidebar' %>
-          </div>
-          <div class="col-md-10">
-            <%= yield %>
-          </div>
+    <body class="hold-transition skin-blue sidebar-mini layout-boxed">
+      <div class="wrapper">
+        <!-- <%= render "common/flashes" %> -->
+        <%= render "common/admin_navbar" %>
+        <%= render 'common/admin_sidebar' %>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+          <%= yield %>
         </div>
-
-        <!-- <div class="row">
-          <%= render "common/admin_footer" %>
-        </div> -->
-
-      </div>
+        <%= render "common/admin_footer" %>
+        </div>
+        <%= javascript_include_tag 'admin/common', 'data-turbolinks-track': 'reload' %>
     </body>
 </html>

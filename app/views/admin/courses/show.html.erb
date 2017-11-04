@@ -1,61 +1,86 @@
-<!-- 面包屑 -->
-<ol class="breadcrumb">
-  <li><%= link_to("首页", admin_dashboard_path) %></li>
-  <li class="active">课程目录</li>
-</ol>
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <%= @course.course_name %>目录
+      <small><%= render_course_is_locked(@course) %> | <%= render_course_category(@course.category) %></small>
+    </h1>
 
-<h3><%= @course.course_name %></h3>
-<%= render_course_is_locked(@course) %>
-<%= render_course_category(@course.category) %>
-<div class="group toolbar-normal clearfix">
-  <%= link_to(" 新增章节", new_admin_course_chapter_path(@course), :class => "btn btn-primary fa fa-plus pull-right" ) %>
-</div>
-<table class="table table-bordered table-hover">
-  <thead >
-      <tr class="active">
-          <td>章名</td>
-          <td>预计学习时间</td>
-          <td>节名</td>
-          <td>管理</td>
-      </tr>
-  </thead>
-  <tbody>
-    <% @chapters.each do |chapter| %>
-    <tr>
-      <td><%= link_to(chapter.chapter_name, admin_course_chapter_path(@course, chapter)) %></td>
-      <td>
-        <% if chapter.learning_time != nil %>
-          <%= chapter.learning_time %>小时
-        <% end %>
-      </td>
-      <td>
-        <ol style="text-align: left">
-          <% chapter.sections.each do |section| %>
-          <li>
-            <%= link_to(section.section_name, admin_chapter_section_path(chapter, section)) %>
-            <% if section.assignments_count > 0 %>
-              (共<%= section.assignments_count %>个作业)
-            <% end %>
+    <ol class="breadcrumb">
+      <li><a href="/admin"><i class="fa fa-dashboard"></i> 首页</a></li>
+      <li class="active">课程目录</li>
+    </ol>
+  </section>
 
-          </li>
-          <% end %>
-        </ol>
+  <!-- Main content -->
+  <section class="content container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-primary">
+          <div class="box-header">
+            <h3 class="box-title">目录列表</h3>
+            <!-- tools box -->
+            <div class="pull-right box-tools">
+              <%= link_to(" 新增一章", new_admin_course_chapter_path(@course), :class => "fa fa-plus btn btn-primary" ) %>
+              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i> 新增一章</button> -->
+            </div>
+            <!-- /. tools -->
+          </div>
+          <div class="box-body">
+            <table class="table">
+              <thead >
+                  <tr class="active">
+                      <td>章名</td>
+                      <td>预计学习时间</td>
+                      <td>节名</td>
+                      <td>管理</td>
+                  </tr>
+              </thead>
+              <tbody>
+                <% @chapters.each do |chapter| %>
+                <tr>
+                  <!-- <td><%= link_to(chapter.chapter_name, admin_course_chapter_path(@course, chapter)) %></td> -->
+                  <td><%= chapter.chapter_name %></td>
+                  <td>
+                    <% if chapter.learning_time != nil %>
+                      <%= chapter.learning_time %>小时
+                      <% else %>
+                      --
+                    <% end %>
+                  </td>
+                  <td style="text-align: left">
+                    <ol >
+                      <% chapter.sections.each do |section| %>
+                      <li>
+                        <%= link_to(section.section_name, admin_chapter_section_path(chapter, section)) %>
+                        <% if section.assignments_count > 0 %>
+                          (共<%= section.assignments_count %>个作业)
+                        <% end %>
 
-      </td>
-      <td>
-        <%= link_to(edit_admin_course_chapter_path(@course, chapter), :class => "btn btn-xs btn-default") do%>
-          <span class="fa fa-edit" title ="编辑章">章</span>
-        <% end %>
+                      </li>
+                      <% end %>
+                    </ol>
+                    <%= link_to(new_admin_chapter_section_path(chapter)) do%>
+                      <span class="fa fa-plus" title="新增小节"> 添加小节</span>
+                    <% end %>
 
-        <%= link_to(admin_course_chapter_path(@course, chapter), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
-          <span class="fa fa-remove" title="删除章">章</span>
-        <% end %>
+                  </td>
+                  <td>
+                    <%= link_to(edit_admin_course_chapter_path(@course, chapter), :class => "btn btn-xs btn-default") do%>
+                      <span class="fa fa-edit" title ="编辑章"> 编辑</span>
+                    <% end %>
 
-        <%= link_to(new_admin_chapter_section_path(chapter), :class => "btn btn-xs btn-primary") do%>
-          <span class="fa fa-plus" title="新增小节">节</span>
-        <% end %>
-    </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+                    <%= link_to(admin_course_chapter_path(@course, chapter), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) do%>
+                      <span class="fa fa-remove" title="删除章"> 删除</span>
+                    <% end %>
+                </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+
+        <!-- /.box -->
+      </div>
+      <!-- /.col -->
+    </div>
+  </section>

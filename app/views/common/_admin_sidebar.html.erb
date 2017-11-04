@@ -1,4 +1,26 @@
-<ul id="sidebar" class="nav nav-pills nav-stacked">
-  <li role="presentation" class="active"><%= link_to('课程管理', admin_dashboard_path) %></li>
-  <li role="presentation" class="active"><%= link_to('作业管理', admin_assignments_path) %></li>
-</ul>
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">学习中心</li>
+      <!-- Optionally, you can add icons to the links -->
+      <li class="<%= is_sidebar_active(["dashboard", "courses", "chapters", "sections"]) %>"><a href="<%= admin_dashboard_path %>"><i class="fa fa-th"></i> <span>课程管理</span></a></li>
+      <li class="<%= is_sidebar_active(["assignments"]) %>"><a href="<%= admin_assignments_path %>"><i class="fa fa-edit"></i> <span>作业管理</span></a></li>
+
+      <!-- <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#">Link in level 2</a></li>
+          <li><a href="#">Link in level 2</a></li>
+        </ul>
+      </li> -->
+    </ul>
+    <!-- /.sidebar-menu -->
+  </section>
+  <!-- /.sidebar -->
+</aside>

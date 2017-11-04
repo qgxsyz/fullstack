@@ -16,7 +16,7 @@ class Admin::ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     @chapter.destroy
 
-    redirect_to admin_course_path(@course)
+    redirect_to :back
   end
 
   def new
