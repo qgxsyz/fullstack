@@ -59,25 +59,29 @@
 
       <div class="group post-nav-btn">
         <ul class="pager-custom">
+          <% if !@prevPage.blank? %>
           <li class="previous">
-            <a id="previous" href="/posts/<%= @firstId %>">
+            <a id="previous" href="/posts/<%= @prevPage %>">
               <i class="fa fa-arrow-left"></i>
               <span> 上一页</span>
             </a>
           </li>
+          <% end %>
           <li class="keyboard-tips">
             <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
             可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页
           </li>
+          <% if !@nextPage.blank? %>
           <li class="next">
-            <a href="/posts/59">下一页<span class="fa fa-arrow-right" id="next"></span></a>
+            <a href="/posts/<%= @nextPage %>">下一页<span class="fa fa-arrow-right" id="next"></span></a>
           </li>
+          <% end %>
         </ul>
       </div>
 
       <% if @section.assignments.count > 0 %>
         <div class="post-task-block" id="task">
-          <h4><i class="fa fa-file-code-o"></i>本节作业</h4>
+          <h4><i class="fa fa-file-code-o"></i>本节作业<%= @nextPage %></h4>
           <% @section.assignments.each do |assignment| %>
           <div class="panel panel-default">
             <div class="panel-heading clearfix">
