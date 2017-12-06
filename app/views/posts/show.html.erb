@@ -10,7 +10,11 @@
           <% if @section.chapter.learning_time != nil %>
             <p>本章预计学习时间: <%= @section.chapter.learning_time %>小时</p>
           <% end %>
-          <p>再学习<%= @section.chapter.sections.length - 1 %>节就可以完成本章了</p>
+          <% if @hasSection > 0 %>
+            <p>再学习<%= @hasSection %>节就可以完成本章了</p>
+          <% else %>
+            <p>学完本节就可以完成本章了</p>
+          <% end %>
         </div>
         <div class="view-count">共 386 位第二期同学学习了本节</div>
       </div>

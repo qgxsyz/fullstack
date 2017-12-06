@@ -27,7 +27,8 @@ class PostsController < ApplicationController
           @prevPage = pageArr[i-1]
           @nextPage = pageArr[i+1]
         end
-
+        #再学习多少节就可以完成本章了
+        @hasSection = len - i
         break
       end
     end
