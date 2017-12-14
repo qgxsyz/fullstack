@@ -35,4 +35,18 @@ class PostsController < ApplicationController
     # 分页 功能 end
 
   end
+
+  def add_to_favorite
+    @section = Section.find(params[:id])
+    @section.users << current_user
+    @section.save
+    redirect_to :back
+  end
+  def quit_favorite
+    @section = Section.find(params[:id])
+    @section.users.delete(current_user)
+    @section.save
+    redirect_to :back
+  end
+
 end

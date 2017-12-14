@@ -20,15 +20,20 @@
       </div>
 
       <div class="post-title">
-        <h3><%= @section.section_name %></h3>
         <div id="favorite" class="favorite-icon-block">
-            <a class="favorites-tooltip" title="收藏本节教材" href="/favorites?post_id=873">
-              <span class="fa fa-bookmark-o"></span>
-            </a>
+            <% if !@section.users.include?(current_user) %>
+              <%= link_to add_to_favorite_post_path(@section),method: :post do %>
+                <span class="fa fa-bookmark-o" title="收藏本教程"></span>
+              <% end %>
+            <% else %>
+              <%= link_to quit_favorite_post_path(@section.id),method: :post do %>
+                <span class="fa fa-bookmark" title="取消收藏"></span>
+              <% end %>
+            <% end %>
         </div>
       </div>
 
-      <div class="post markdown">
+      <div class="markdown">
         <% if @section.content %>
           <%= markdown(@section.content) %>
         <% else %>

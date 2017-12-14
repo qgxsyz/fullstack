@@ -13,6 +13,12 @@ Rails.application.routes.draw do
 
   #文章
   resources :posts, only: [:show]
+  resources :posts do
+    member do
+      post :add_to_favorite
+      post :quit_favorite
+    end 
+  end
 
   # meetup
   resources :meetup_groups
