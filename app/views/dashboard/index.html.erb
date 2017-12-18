@@ -14,7 +14,7 @@
       </div>
       <div class="header-text">
         <h3>
-          <span class="username"><a href="/account/users"><%= current_user.email %></a></span>
+          <span class="username"><a href="/account/users"><%= current_user.email unless current_user.blank? %></a></span>
         </h3>
       </div>
   </div>

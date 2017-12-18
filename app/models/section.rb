@@ -21,6 +21,9 @@ class Section < ApplicationRecord
 
   has_many :assignments
 
+  has_many :favorites
+  has_many :users, through: :favorites, source: :user
+
   # 本节作业数
   def assignments_count
     self.assignments.length

@@ -382,6 +382,10 @@ a:hover{
     border-radius: 1px;
     background: #fff;
 }
+.course-block h1{
+  margin: 0;
+  padding: 0;
+}
 .course-des h3, .operate-intro h3 {
     font-size: 16px;
     margin: 0;
@@ -506,14 +510,8 @@ a:hover{
     overflow: hidden;
     margin-bottom: 30px;
 }
-.post-title h3 {
-    float: left;
-    font-size: 26px;
-    font-weight: normal;
-}
 .favorite-icon-block {
     display: inline-block;
-    // margin-top: 30px;
     float: right;
     height: 26px;
 }
@@ -643,5 +641,93 @@ a:hover{
 .post-task-block .fa-file-code-o{
     color: #1ecd97;
     margin-right: 5px;
+}
+.post-faq-block .panel-default,
+.post-task-block .panel-default {
+    background: #f7f9fa;
+    border: 1px solid #eff2f3;
+    border-radius: 3px;
+    padding: 15px;
+    margin: 10px 0 20px;
+}
+.course-block .panel {
+    border-radius: 1px;
+}
+.post-faq-block .panel-default>.panel-heading,
+.post-task-block .panel-default>.panel-heading {
+    border: none;
+    background: none;
+    padding: 0;
+}
+.post-faq-block .post-task-descripiton,
+.post-task-block .post-task-descripiton {
+    margin-top: 18px;
+    font-size: 1em;
+    color: #666;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 18px;
+    overflow-x: hidden;
+}
+.post-faq-block .post-task-name,
+.post-task-block .post-task-name{
+    float: left;
+}
+.post-faq-block .post-task-option,
+.post-task-block .post-task-option {
+    float: right;
+}
+.post-task-block .post-task-name h5,
+.post-task-block .post-task-name p{
+  margin: 0;
+}
+.post-task-block .post-task-name p.count {
+    margin-top: 10px;
+    color: #666;
+}
+.post-task-block .post-task-name p.count i {
+    color: #1ecd97;
+    padding-left: 15px;
+    padding-right: 2px;
+}
+.post-task-block .post-task-name p.count a {
+    color: #666;
+}
+.opt-btn {
+    color: #666;
+    background-color: transparent;
+    border: 1px solid #1ecd97;
+    padding: 5px 9px;
+    margin: 0;
+    width: 80px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.homework-btn {
+    color: #fff;
+    background-color: #1ecd97;
+    padding: 6px 10px;
+    margin: 0;
+    width: 80px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.homework-btn:focus, .homework-btn:hover {
+    color: #fff;
+    background-color: #23dea3;
+    text-decoration: none;
+}
+.opt-btn:focus, .opt-btn:hover {
+    color: #fff;
+    background-color: #1ecd97;
+    text-decoration: none;
+}
+.task-show-title h3{
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: normal;
+}
+.course-block .content-font{
+  margin-top: 10px;
 }
 //作业end

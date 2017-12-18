@@ -10,21 +10,30 @@
           <% if @section.chapter.learning_time != nil %>
             <p>本章预计学习时间: <%= @section.chapter.learning_time %>小时</p>
           <% end %>
-          <p>再学习<%= @section.chapter.sections.length %>节就可以完成本章了</p>
+          <% if @hasSection > 0 %>
+            <p>再学习<%= @hasSection %>节就可以完成本章了</p>
+          <% else %>
+            <p>学完本节就可以完成本章了</p>
+          <% end %>
         </div>
         <div class="view-count">共 386 位第二期同学学习了本节</div>
       </div>
 
       <div class="post-title">
-        <h3><%= @section.section_name %></h3>
         <div id="favorite" class="favorite-icon-block">
-            <a class="favorites-tooltip" title="收藏本节教材" href="/favorites?post_id=873">
-              <span class="fa fa-bookmark-o"></span>
-            </a>
+            <% if !@section.users.include?(current_user) %>
+              <%= link_to add_to_favorite_post_path(@section),method: :post do %>
+                <span class="fa fa-bookmark-o" title="收藏本教程"></span>
+              <% end %>
+            <% else %>
+              <%= link_to quit_favorite_post_path(@section.id),method: :post do %>
+                <span class="fa fa-bookmark" title="取消收藏"></span>
+              <% end %>
+            <% end %>
         </div>
       </div>
 
-      <div class="post markdown">
+      <div class="markdown">
         <% if @section.content %>
           <%= markdown(@section.content) %>
         <% else %>
@@ -59,32 +68,39 @@
 
       <div class="group post-nav-btn">
         <ul class="pager-custom">
+          <% if !@prevPage.blank? %>
           <li class="previous">
-            <a id="previous" href="/posts/57">
+            <a id="previous" href="/posts/<%= @prevPage %>">
               <i class="fa fa-arrow-left"></i>
               <span> 上一页</span>
             </a>
           </li>
+          <% end %>
           <li class="keyboard-tips">
             <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
             可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页
           </li>
+          <% if !@nextPage.blank? %>
           <li class="next">
-            <a href="/posts/59">下一页<span class="fa fa-arrow-right" id="next"></span></a>
+            <a href="/posts/<%= @nextPage %>">下一页<span class="fa fa-arrow-right" id="next"></span></a>
           </li>
+          <% end %>
         </ul>
       </div>
 
-      <div class="post-task-block" id="task">
-          <h4><i class="fa fa-file-code-o"></i>本节作业</h4>
+      <% if @section.assignments.count > 0 %>
+        <div class="post-task-block" id="task">
+          <h4><i class="fa fa-file-code-o"></i>本节作业<%= @nextPage %></h4>
+          <% @section.assignments.each do |assignment| %>
           <div class="panel panel-default">
             <div class="panel-heading clearfix">
               <div class="post-task-name">
                 <h5>
-                    <a href="/assignments/47">API 作业</a>：<a href="/tasks/301">作业一</a>
+                    <!-- <a href="/assignments/47">API 作业</a>：<a href="/tasks/301">作业一</a> -->
+                    <%= assignment.assignment_name %>
                 </h5>
                 <p class="count">
-                  <span class="num">已有 57 个第二期同学提交了这个作业</span>
+                  <span class="num">已有 5 个同学提交了这个作业</span>
                   <span class="answer-link">
                     <a target="_blank" href="/tasks/301/other_answers?order=recent">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i>看看同学怎么做
@@ -93,16 +109,18 @@
                 </p>
               </div>
               <div class="post-task-option">
-                  <a class="homework-btn" href="/tasks/301"><i class=""></i><span> 提交作业</span></a>
+                <a class="homework-btn" href="/tasks/301"><i class=""></i><span> 提交作业</span></a>
+                <!-- <a class="opt-btn" href="/tasks/272"><i class=""></i><span> 修改作业</span></a> -->
               </div>
             </div>
             <div class="pannel-body">
-              <div class="post-task-descripiton">content
-              </div>
+              <div class="post-task-descripiton"><%= markdown(assignment.description) %></div>
             </div>
 
           </div>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

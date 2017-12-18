@@ -41,6 +41,9 @@ class User < ApplicationRecord
   has_many :answer_like_relationships
   has_many :liked_answers, :through => :answer_like_relationships, :source => :answer
 
+  has_many :favorites
+  has_many :sections, through: :favorites, source: :section
+
   def admin?
     is_admin
   end
