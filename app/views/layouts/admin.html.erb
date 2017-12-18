@@ -4,18 +4,13 @@
         <title>创客网后台管理系统</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <%= csrf_meta_tags %>
-
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= stylesheet_link_tag "admin/common", media: 'all', 'data-turbolinks-track': 'reload' %>
-
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-
+        <link href="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.js"></script>
+        <%= javascript_include_tag 'admin/common', 'data-turbolinks-track': 'reload' %>
     </head>
 
-    <body class="hold-transition skin-blue sidebar-mini layout-boxed">
+    <body class="hold-transition skin-blue sidebar-mini fixed">
       <div class="wrapper">
         <!-- <%= render "common/flashes" %> -->
         <%= render "common/admin_navbar" %>
@@ -26,6 +21,5 @@
         </div>
         <%= render "common/admin_footer" %>
         </div>
-        <%= javascript_include_tag 'admin/common', 'data-turbolinks-track': 'reload' %>
     </body>
 </html>
