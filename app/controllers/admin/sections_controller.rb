@@ -15,7 +15,8 @@ class Admin::SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
-    redirect_to admin_chapter_sections_path
+    
+    redirect_to :back
   end
 
   def new
