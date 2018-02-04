@@ -1,38 +1,36 @@
-<div class="jumbotron">
-  <h1 class="title">豆优课堂</h1>
-  <p class="slogan">豆优课堂是一个提供解决问题方案的教育网站。
-  <br>
-  我们希望藉由这个网站，能让大家学到解决问题的方法来提高工作效率。
-  </p>
-  <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上使用</a></p>
-</div>
-<section id="company">
-  <div class = "container-fluid">
-    <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-          <div class="caption">
-            <h3>北京海淀区</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-          <div class="caption">
-            <h3>info@ckw.com</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-          <div class="caption">
-            <h3>010-12344321</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- banner -->
+	<div class="banner">
+    <%= image_tag("index/banner.png", :width => "100%")%>
+		<div class="jumb">
+			<h3 class="title">用靠谱的方式，学好、学明白</h3>
+			<p class="detail">学习从未这么直白</p>
+			<a href="#" class="link_btn">
+				<i class="icon"></i>
+				<span>开始学习</span>
+			</a>
+		</div>
+	</div>
+	<!-- banner end-->
+	<!-- section -->
+	<div class="section_box">
+		<div class="container_wrap section_com section_1">
+			<div class="section_img left">
+        <%= image_tag("index/section01.jpg")%>
+			</div>
+			<div class="article right">
+				<h3>缺少必要知识</h3>
+				<p>效率不是最重要的吗?为什么非要把文稿看完，才能搞明白？我只想看重点</p>
+			</div>
+		</div>
+		<div class="container_wrap section_com section_2">
+			<div class="article left">
+				<h3>我都学了些什么</h3>
+				<p>不要因为走的太远，忘记了当初为什么出发，我学习什么，我喜欢什么
+	我学了多长时间？我的问题是什么？一目了然。</p>
+			</div>
+			<div class="section_img right">
+        <%= image_tag("index/section02.png")%>
+			</div>
+		</div>
+	</div>
+	<!-- section end-->
