@@ -1,3 +1,12 @@
+html, body{
+	font-family: PingFangSC;
+	color: #333;
+	font-size: 12px;
+	background: #f5f5f5
+}
+a{	color: #333;
+	text-decoration: none;
+}
 // 回到顶部
 #gotop {
   width: 48px;
@@ -16,6 +25,7 @@
   cursor: pointer;
   display: none; /*默认先隐藏掉*/
 }
+<<<<<<< HEAD
 // 回到顶部 end
 
 body{
@@ -31,3 +41,47 @@ body{
 .bb-1px{
   border-bottom: 1px solid #eaeaea;
 }
+=======
+
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.mr10{
+	margin-left: 10px;
+}
+.pr {
+	position: relative;
+}
+.ellipsis{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.line_clamp{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.container_wrap{
+	width: 1200px;
+	margin: 0 auto;
+}
+#main{
+	padding: 20px 0;
+}
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+.clearfix {
+    *zoom:1
+}
+// 回到顶部 end
+>>>>>>> 2e1bbf35426daf1980d86077d939500fa6350a07
