@@ -1,126 +1,173 @@
-<%= title "文章 - " %>
-<%= render :partial => "courses/course_item" %>
-
-<div class="content-wrap">
-  <div class="container">
-    <div class="course-block">
-      <div class="post-visitor">
-        <div class="des-text">
-          <h4>所属章节：<%= @section.chapter.chapter_name %></h4>
-          <% if @section.chapter.learning_time != nil %>
-            <p>本章预计学习时间: <%= @section.chapter.learning_time %>小时</p>
-          <% end %>
-          <% if @hasSection > 0 %>
-            <p>再学习<%= @hasSection %>节就可以完成本章了</p>
+<div class="posts-show-container">
+  <div class="banner-wrap">
+    <%= image_tag  "posts-show/post-detail-banner.png" %>
+  </div>
+  <div class="main-wrap">
+    <div class="main">
+      <div class="title-box bb-1px">
+        <h2 class="title">Markdown快速入门</h2>
+        <p class="time">2017年05月21日发布</p>
+      </div>
+      <div class="body">
+        <div class="markdown">
+          <% if @section.content %>
+            <%= markdown(@section.content) %>
           <% else %>
-            <p>学完本节就可以完成本章了</p>
+            暂无内容
           <% end %>
         </div>
-        <div class="view-count">共 386 位第二期同学学习了本节</div>
       </div>
-
-      <div class="post-title">
-        <div id="favorite" class="favorite-icon-block">
-            <% if !@section.users.include?(current_user) %>
-              <%= link_to add_to_favorite_post_path(@section),method: :post do %>
-                <span class="fa fa-bookmark-o" title="收藏本教程"></span>
-              <% end %>
-            <% else %>
-              <%= link_to quit_favorite_post_path(@section.id),method: :post do %>
-                <span class="fa fa-bookmark" title="取消收藏"></span>
-              <% end %>
-            <% end %>
+    </div>
+    <div class="side">
+      <div class="important-box">
+        <div class="header bb-1px">
+          <span class="title">划重点</span>
+          <span class="note">
+            <%= image_tag  "posts-show/icon-note.png" %>
+          </span>
+        </div>
+        <div class="body">
+           水稻阿斯顿阿斯顿阿斯顿是啊撒是是 实打实的阿斯顿啊撒啊撒是是是是是 水稻啊撒水稻阿斯顿水稻阿斯顿阿斯 水稻安德森阿斯顿啊大地阿斯顿啊是 的阿斯顿阿斯顿阿斯顿阿斯顿阿斯顿
         </div>
       </div>
 
-      <div class="markdown">
-        <% if @section.content %>
-          <%= markdown(@section.content) %>
-        <% else %>
-          暂无内容
-        <% end %>
-      </div>
-
-      <!-- 我要吐槽 start -->
-      <div class="panic-panel">
-        <div class="panic-panel-title">
-          <h4>对本页内容的感受如何？</h4>
-          <div class="complain-btn">
-            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
-              📣 &nbsp;我要吐槽
-            </button>
+      <div class="catalog-box">
+        <div class="header">
+          <span class="title">目录</span>
+        </div>
+        <div class="body">
+          <div class="nav-body">
+            <div class="highlight-title" style="top: 81px; height: 27px; display: block;"></div>
+            <ul class="articleIndex">
+              <li class="">
+                <a href="#articleHeader0">什么是 Markdown</a>
+              </li>
+              <li class="">
+                <a href="#articleHeader1">为什么设计 Markdown</a>
+              </li>
+              <li class="">
+                <a href="#articleHeader2">为什么选择 Markdown</a>
+              </li>
+              <li style="list-style:none;">
+                <ul>
+                  <li class="active">
+                    <a href="#articleHeader3">优点</a>
+                  </li>
+                  <li class="">
+                    <a href="#articleHeader4">缺点</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="#articleHeader5">Markdown 基础语法</a>
+              </li>
+              <li style="list-style:none;">
+                <ul>
+                  <li class="">
+                    <a href="#articleHeader6">标题</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="#articleHeader7">第一级标题 &lt;h1&gt;</a>
+              </li>
+              <li style="list-style:none;">
+                <ul>
+                  <li class="">
+                    <a href="#articleHeader8">第二级标题 &lt;h2&gt;</a>
+                  </li>
+                  <li style="list-style:none;">
+                    <ul>
+                      <li class="">
+                        <a href="#articleHeader9">第六级标题 &lt;h6&gt;</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader10">强调</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader11">换行</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader12">无序列表</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader13">有序列表</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader14">任务列表</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader15">图片</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader16">链接</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader17">区块引用</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader18">行内代码</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader19">多行或代码段</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader20">表格</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader21">删除线</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader22">下划线</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader23">分割线</a>
+                      </li>
+                      <li class="">
+                        <a href="#articleHeader24">反斜杠</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li style="list-style:none;">
+                <ul>
+                  <li class="">
+                    <a href="#articleHeader25">其它高级语法</a>
+                  </li>
+                  <li class="">
+                    <a href="#articleHeader26">Markdown 编辑器</a>
+                  </li>
+                  <li class="">
+                    <a href="#articleHeader27">参考资源</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <div class="panic-panel-body ui-selectable" id="selectable" data-post-id="873">
-          <div class="item  ui-selectee" value="good">
-            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😄</span><span class="text ui-selectee">So easy</span></div>
-          </div>
-          <div class="item  ui-selectee" value="normal">
-            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😐</span><span class="text ui-selectee">还OK</span></div>
-          </div>
-          <div class="item  ui-selectee" value="bad">
-            <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😭</span><span class="text ui-selectee">崩溃了</span></div>
-          </div>
-        </div>
       </div>
-      <!-- 我要吐槽 end -->
-
-      <div class="group post-nav-btn">
-        <ul class="pager-custom">
-          <% if !@prevPage.blank? %>
-          <li class="previous">
-            <a id="previous" href="/posts/<%= @prevPage %>">
-              <i class="fa fa-arrow-left"></i>
-              <span> 上一页</span>
-            </a>
-          </li>
-          <% end %>
-          <li class="keyboard-tips">
-            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
-            可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页
-          </li>
-          <% if !@nextPage.blank? %>
-          <li class="next">
-            <a href="/posts/<%= @nextPage %>">下一页<span class="fa fa-arrow-right" id="next"></span></a>
-          </li>
-          <% end %>
-        </ul>
+    </div>
+    <div class="tools">
+      <div class="list item">
+        <%= image_tag  "posts-show/icon-list.png" %>
+      </div>
+      <div class="item">
+        <%= image_tag  "posts-show/icon-praise.png" %>
+      </div>
+      <div class="item">
+        <%= image_tag  "posts-show/icon-like.png" %>
+      </div>
+      <div class="item">
+        <%= image_tag  "posts-show/icon-write.png" %>
+      </div>
+      <div class="item">
+        <%= image_tag  "posts-show/icon-weibo.png" %>
+      </div>
+      <div class="item">
+        <%= image_tag  "posts-show/icon-wechat.png" %>
       </div>
 
-      <% if @section.assignments.count > 0 %>
-        <div class="post-task-block" id="task">
-          <h4><i class="fa fa-file-code-o"></i>本节作业<%= @nextPage %></h4>
-          <% @section.assignments.each do |assignment| %>
-          <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-              <div class="post-task-name">
-                <h5>
-                    <!-- <a href="/assignments/47">API 作业</a>：<a href="/tasks/301">作业一</a> -->
-                    <%= assignment.assignment_name %>
-                </h5>
-                <p class="count">
-                  <span class="num">已有 5 个同学提交了这个作业</span>
-                  <span class="answer-link">
-                    <a target="_blank" href="/tasks/301/other_answers?order=recent">
-                      <i class="fa fa-chevron-right" aria-hidden="true"></i>看看同学怎么做
-                    </a>
-                  </span>
-                </p>
-              </div>
-              <div class="post-task-option">
-                <a class="homework-btn" href="/tasks/301"><i class=""></i><span> 提交作业</span></a>
-                <!-- <a class="opt-btn" href="/tasks/272"><i class=""></i><span> 修改作业</span></a> -->
-              </div>
-            </div>
-            <div class="pannel-body">
-              <div class="post-task-descripiton"><%= markdown(assignment.description) %></div>
-            </div>
-
-          </div>
-          <% end %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>

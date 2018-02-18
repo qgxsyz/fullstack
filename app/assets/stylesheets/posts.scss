@@ -1,3 +1,282 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$themeColor: #009aee;//rgb(0, 154, 238)
+.posts-show-container{
+    width: 100%;
+    background-color: #f5f5f5;
+    .banner-wrap{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .main-wrap{
+        width: 1120px;
+        margin: 15px auto;
+        display: flex;
+        .main{
+            flex: 1;
+            background-color: #fff;
+            padding: 30px 15px;
+            margin-right: 20px;
+            .title-box{
+                padding-bottom: 20px;
+                .title{
+                    margin: 0;
+                    font-size: 24px;
+                    color: #333;
+                }
+                .time{
+                    margin-top: 15px;
+                    font-size: 14px;
+                    color: #999;
+                }
+            }
+            .body{
+                margin-top: 30px;
+                .markdown{
+                    h3,h4,h5,p,ul,ol,pre,blockquote,table{
+                        margin: 1.5em 0px;
+                    }
+                    h1,h2,h3{
+                        margin: 1.5em 0px 0px;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid #eaeaea;
+                        color: #000;
+                    }
+                    h1{
+                        font-size: 2.25em;
+                    }
+                    h2{
+                        font-size: 1.75em;
+                    }
+                    h3{
+                        font-size: 1.5em;
+                        border-width: 0;
+                        padding-bottom: 0px;
+                    }
+                 
+                    blockquote{
+                        padding: 10px 20px;
+                        color: rgb(85, 85, 85);
+                        font-size: 14px;
+                        border-left: 2px solid $themeColor;
+                        background: rgb(246, 246, 246);
+                        line-height: 1.6;
+                        p{
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                    code, kbd, pre, samp {
+                        font-family: "Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace;
+                    }
+                    code {
+                        padding: 2px 4px;
+                        font-size: 85%;
+                        color: #c7254e;
+                        background-color: #f9f2f4;
+                        border-radius: 4px;
+                    }
+                    p{
+                        font-size: 14px;
+                        line-height: 1.6;
+                    }
+                    ul, ol {
+                        margin-left: 3em;
+                        padding-left: 0px;
+                        li{
+                            margin: 0.3em 0px;
+                            display: list-item;
+                            text-align: -webkit-match-parent;
+                            p{
+                                margin: 0px;
+                                padding: 0;
+                            }
+                            ul, ol{
+                                margin-top: 0;
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .code-block{
+                        font-size: 0.93em;
+                        color: #333;
+                        word-break: break-all;
+                        word-wrap: break-word;
+                        line-height: 1.45;
+                        max-height: 35em;
+                        position: relative;
+                        border-width: initial;
+                        border-style: none;
+                        border-color: initial;
+                        border-image: initial;
+                        overflow: auto;
+                        border-radius: 4px;
+                        background-image: image-url("posts-show/blueprint.png");
+                        background-size: 30px, 30px;
+                        background-color: rgb(246, 246, 246);
+                        .code-header{
+                            height: 0;
+                            border: 0;
+                        }
+                        .code-body{
+                            .rouge-table{
+                                margin: 0;
+                            }
+                            pre{
+                                margin: 5px 0;
+                                background-color: inherit;  
+                            }
+                        }
+                    }
+                    img{
+                        max-width: 100%;
+                        cursor: pointer;
+                        display: inline;
+                        padding: 3px;
+                        border: 1px solid #ddd;
+                        vertical-align: middle;
+                    }
+                    a{
+                        border-bottom: 1px solid rgba(0,154,238,0.25);
+                        padding-bottom: 1px;
+                        color: $themeColor;
+                        text-decoration: none;
+                        background: transparent;
+                        &:hover{
+                            color: #004aee;
+                        }
+                    }
+                    // TODO 暂不支持table
+                    table:not(.rouge-table){
+                        width: 100%;
+                        background-color: transparent;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                        th, td{
+                            border: 1px solid #E6E6E6;
+                            padding: 5px 8px;
+                            word-break: normal;
+                        }
+                        th{
+                            background: #F3F3F3;
+                        }
+                    }
+                    hr {
+                        margin: 1.5em auto;
+                        border-top: 2px dotted #eee;
+                        box-sizing: content-box;
+                        height: 0;
+                    }
+                }
+            }
+        }
+        .side{
+            width: 285px;
+            .important-box{
+                width: 100%;
+                height: 200px;
+                background-color: #fff;
+                margin-bottom: 15px;
+                .header{
+                    height: 50px;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .title{
+                        font-size: 16px;
+                        color: #333;
+                    }
+                    .note{
+                        height: 16px;
+                        width: 14px;
+                        display: inline-block;
+                        img{
+                            width: 100%;
+                            display: block;
+                        }
+                    }
+                }
+                .body{
+                    padding: 15px;
+                    overflow-y: auto;
+                    font-size: 12px;
+                    color: #666;
+                    line-height: 1.8;
+                }
+            }
+            .catalog-box{
+                background-color: #fff;
+                .header{
+                    font-size: 16px;
+                    background-color: #FFF;
+                    font-weight: bold;
+                    border: none;
+                    padding: 15px;
+                    padding-bottom: 12px;
+                    color: #333;
+                    cursor: initial;
+                }
+                .body{
+                    position: relative;
+                    z-index: 2;
+                    overflow: hidden;
+                    max-height: inherit;
+                    padding: 0 0 10px;
+                    -moz-transition: all .2s ease;
+                    -o-transition: all .2s ease;
+                    -webkit-transition: all .2s ease;
+                    transition: all .2s ease;
+                    .nav-body{
+                        position: relative;
+                        padding: 0 15px;
+                        .highlight-title{
+                            position: absolute;
+                            display: block;
+                            left: 0;
+                            right: 0;
+                            background: #f3f3f3;
+                            z-index: 1;
+                            border-left: 2px solid $themeColor;
+                            -moz-transition: all .2s ease;
+                            -o-transition: all .2s ease;
+                            -webkit-transition: all .2s ease;
+                            transition: all .2s ease;
+                        }
+                        ul {
+                            padding-left: 15px;
+                            margin: 0;
+                            list-style-type: square;
+                        }
+                        .articleIndex {
+                            position: relative;
+                            z-index: 2;
+                            line-height: 21px;
+                            li {
+                                a{
+                                    display: block;
+                                    padding: 3px 0;
+                                    color: #000;
+                                }
+                                &.active {
+                                    color: $themeColor;
+                                    a{
+                                        color: $themeColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .tools{
+            position: fixed;
+            display: none;
+        } 
+    }
+}
