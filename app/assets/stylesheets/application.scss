@@ -124,78 +124,7 @@
     }
   }
 }
-<<<<<<< HEAD
-.title {
-  background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-  max-width: 500px;//最大宽度
-//   margin-top: 200px;//和顶部拉开距离
-  margin-bottom: 0;//这样就可以紧接息面的描述文字
-  border-top-right-radius: 3px;//右上角圆边
-  border-top-left-radius: 3px;//左上角圆边
-}
-.jumbotron h1, .jumbotron .h1 {
-    text-align: left;//文字左对齐
-    color: #222;  //字体颜色
 
-    padding: 50px 20px 0;//上50px，左右20px，下0
-}
-
-.jumbotron p {
-    margin: 0;//上下左右margin为0
-    font-size: 26px;//字体大小
-    max-width: 500px;//最大宽度
-    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
-    padding: 20px;//上下左右padding为20px
-    text-align:left;//文字左对齐
-    color: #222;//字体颜色
-
-    border-bottom-right-radius: 3px;//右下角圆边
-    border-bottom-left-radius: 3px;//左下角圆边
-}
-.btn-danger {
-    color: #fff;//字体颜色
-
-    background-color: #EF6C00;//背景颜色
-
-    border-color: #EF6C00;//边框颜色
-
-}
-
-.btn-danger:hover {
-    background-color: #E65100;//鼠标放置在btn上的背景颜色
-
-    border-color: #E65100;//鼠标放置在btn上的边框颜色
-
-}
-.btn-lg, .btn-group-lg > .btn {
-    padding: 8px 16px;//通过padding来决定btn的大小
-    font-size: 20px;//btn文字大小
-    letter-spacing: 3px;//调整文字间距
-    border-radius: 3px;//btn圆角
-    width: 200px;//这里用指定宽度把btn拉得更长
-}
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
-}
-
-.lead {
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
-}
-// banner end
-
-//caption start
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
-}
-=======
 .section_box {
 	background: #fff;
   .section_com {
@@ -230,7 +159,6 @@
       margin-top: 177px;
     }
   }
->>>>>>> 2e1bbf35426daf1980d86077d939500fa6350a07
 
 }
 /*首页 css end*/
