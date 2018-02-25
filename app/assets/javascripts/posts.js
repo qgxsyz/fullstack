@@ -4,7 +4,7 @@
 
 $(function () {
     var $article = $('.posts-show-container .markdown');
-    var $header = $article.find('h1, h2, h3');
+    var $header = $article.find('h1, h2, h3,h4,h5');
 
     // 目录生成
     articleIndex();
