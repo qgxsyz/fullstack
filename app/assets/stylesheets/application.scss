@@ -28,12 +28,17 @@
 }
 
 // 导航栏 start
-.header{
+.layout-header{
   height: 70px;
 	background: #fff;
   .logo{
-  	padding-top: 16px;
-  	margin-right: 36px;
+		margin-right: 36px;
+		.navbar-brand{
+			padding: 10px;
+			line-height: 50px;
+			color: #333;
+			font-size: 18px;
+		}
   }
   .wrap_left li{
   	float: left;

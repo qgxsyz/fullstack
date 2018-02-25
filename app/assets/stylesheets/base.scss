@@ -67,7 +67,10 @@ body{
 }
 .container_wrap{
 	width: 1200px;
-	margin: 0 auto;
+  margin: 0 auto;
+}
+.container-fluid1{
+  min-height: calc(100vh - 152px);
 }
 #main{
 	padding: 20px 0;
