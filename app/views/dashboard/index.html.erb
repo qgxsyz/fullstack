@@ -14,7 +14,10 @@
     			<li class="course_card">
     				<%= link_to course_syllabus_path(course) do%>
     					<div class="img_box">
-    						<%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
+                <%= image_tag(course.course_img.thumb.url) unless course.course_img.blank? %>
+                <% if course.course_img.blank? %>
+                <%= image_tag  "default_course_img.jpg" %>
+                <% end %>
     					</div>
     					<h2 class="title line_clamp"><%= course.course_name %></h2>
     					<div class="detail">
