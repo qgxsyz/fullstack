@@ -2,9 +2,6 @@
 //     $.CateNav('#postsMarkdown', '#postsCatalog');//第一个参数为存放文章内容的box,第二个参数为存放生成目录的box	
 // })
 
-
-
-
 $(function () {
     var $article = $('.posts-show-container .markdown');
     var $header = $article.find('h1, h2, h3');
@@ -55,7 +52,13 @@ $(function () {
         setSidePosition()
     })
     function setSidePosition(){
-        var sideOffsetTop = $('.posts-show-container .side').offset().top - $(document).scrollTop();
+        if (!$article) {
+            return;
+        }
+        if (!$('#postsSide')){
+            return;
+        }
+        var sideOffsetTop = $('#postsSide').offset().top - $(document).scrollTop();
         var $side = $('.side-box-wrap');
         // console.log('sideOffsetTop:', sideOffsetTop)
         if (sideOffsetTop <= 0) {
