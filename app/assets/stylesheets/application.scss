@@ -126,7 +126,7 @@
       background-color: #1965b5;
       display: inline-block;
       font-size: 18px;
-      color: #fefffe;
+			color: #fefffe;
     }
   }
 }
@@ -180,14 +180,19 @@
     font-weight: normal;
   }
    .user_setup_content{
-       background: #fff;
-       margin-top: 50px;
-       padding-top: 20px;
-       padding-bottom: 20px;
+      background: #fff;
+      width: 400px;
+			position: fixed;
+			left: 50%;
+			top: 45%;
+			transform: translate(-50%,-50%);
+			margin: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
 
-      border: 1px solid #dadada;
+      // border: 1px solid #dadada;
       box-shadow: 0 9px 30px -6px rgba(0,0,0,.2), 0 18px 20px -10px rgba(0,0,0,.04), 0 18px 20px -10px rgba(0,0,0,.04), 0 10px 20px -10px rgba(0,0,0,.04);
-       border-radius: 10px;
+      border-radius: 10px;
 
        opacity:0.95;
        filter:alpha(opacity=95);
