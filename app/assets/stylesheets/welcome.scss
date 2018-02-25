@@ -1,3 +1,73 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*首页 css*/
+.banner{
+	position: relative;
+  .jumb{
+  	position: absolute;
+  	top: 40%;
+  	width: 100%;
+  	text-align: center;
+    .title{
+      	font-size: 48px;
+      	font-weight: 600;
+      	color: #fff;
+    }
+    .detail{
+    	font-size: 20px;
+      	font-weight: 500;
+      	color: #fefffe;
+      	margin: 30px 0 40px;
+    }
+    .link_btn{
+      width: 170px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 6px;
+      background-color: #1965b5;
+      display: inline-block;
+      font-size: 18px;
+			color: #fefffe;
+    }
+  }
+}
+
+.section_box {
+	background: #fff;
+  .section_com {
+  	height: 500px;
+    .section_img{
+    	margin-top: 150px;
+    }
+    h3{
+    	font-size: 30px;
+    	color: #333;
+    	margin-bottom: 50px;
+    }
+    p{
+    	font-size: 20px;
+    	color: #4f5f78;
+    	line-height: 48px;
+    }
+  }
+  .section_1 {
+    .article{
+    	width: 652px;
+    }
+    h3{
+      margin-top: 200px;
+    }
+  }
+  .section_2 {
+    .article{
+    	width: 620px;
+    }
+    h3{
+      margin-top: 177px;
+    }
+  }
+
+}
+/*首页 css end*/
