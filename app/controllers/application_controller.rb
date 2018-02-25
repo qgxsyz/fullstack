@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
 
   def require_is_admin
     if !current_user.admin?
-      flash[:alert] = 'You are not admin'
+      flash[:alert] = '只有管理员才可进入，你想干啥？'
+      redirect_to root_path
+    end
+  end
+
+  def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = '只有管理员才可进入，你想干啥？'
       redirect_to root_path
     end
   end
