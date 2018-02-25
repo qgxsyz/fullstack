@@ -4,18 +4,34 @@
 			<%= image_tag("index/logo.png", :width => "100") %>
 		</h1>
 		<ul class="wrap_left left">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">学习中心</a></li>
-			<li><a href="#">个人中心</a></li>
+			<li><a href="/">首页</a></li>
+			<li><a href="/dashboard?category=basic">学习中心</a></li>
+			<!-- <li><a href="#">个人中心</a></li> -->
 		</ul>
 		<div class="wrap_right right">
-			<div class="search left">
+			<!-- <div class="search left">
 				<input type="text" name="search">
 				<span class="search_icon"></span>
-			</div>
+			</div> -->
 			<ul class="left">
-				<li class="left login_btn"><a href="#">登录</a></li>
-				<li class="left signup_btn"><a href="#">注册</a></li>
+        <% if !current_user %>
+  				<li class="left login_btn"><%= link_to("登录", new_user_session_path) %></li>
+  				<li class="left signup_btn"><%= link_to("注册", new_user_registration_path) %></li>
+        <% else %>
+          <li class="dropdown" style="margin-top:6px;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Hi!, <%= current_user.email %>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <% if current_user.admin? %>
+                <li> <%= link_to("管理后台", admin_dashboard_path) %> </li>
+                <% end %>
+                <li class="divider"></li>
+                <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+            </ul>
+          </li>
+        <% end %>
 			</ul>
 		</div>
 	</div>
