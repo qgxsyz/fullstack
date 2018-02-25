@@ -15,8 +15,8 @@
 			</div> -->
 			<ul class="left">
         <% if !current_user %>
-  				<li class="left login_btn"><%= link_to("登录", new_user_session_path) %></li>
-  				<li class="left signup_btn"><%= link_to("注册", new_user_registration_path) %></li>
+  				<li class="left login_btn"><a href="#" data-toggle="modal" data-target="#login-modal">登录</a></li>
+  				<li class="left signup_btn"><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
         <% else %>
           <li class="dropdown" style="margin-top:6px;">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -25,9 +25,9 @@
             </a>
             <ul class="dropdown-menu">
                 <% if current_user.admin? %>
-                <li> <%= link_to("管理后台", admin_dashboard_path) %> </li>
+	                <li> <%= link_to("管理后台", admin_dashboard_path) %> </li>
+									<li class="divider"></li>
                 <% end %>
-                <li class="divider"></li>
                 <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
@@ -36,3 +36,42 @@
 		</div>
 	</div>
 </nav>
+<!-- modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog" role="document">
+			<div class="loginmodal-container">
+				<div class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></div>
+				<h2>Log in</h2>
+				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<div class="form-inputs">
+					<%= f.input :email, required: false, autofocus: true %>
+					<%= f.input :password, required: false %>
+					<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+				</div>
+				<div class="form-actions">
+					<%= f.button :submit, "Log in", :class=> 'btn btn-success' %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<div class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></div>
+				<h2>Sign up</h2>
+				<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+				<%= f.error_notification %>
+				<div class="form-inputs">
+					<%= f.input :email, required: true, autofocus: true %>
+					<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+					<%= f.input :password_confirmation, required: true %>
+				</div>
+				<div class="form-actions">
+					<%= f.button :submit, "Sign up", :class=> 'btn btn-success' %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<!-- modal -->
