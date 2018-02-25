@@ -1,12 +1,12 @@
 <div class="posts-show-container">
-  <div class="banner-wrap">
+  <!-- <div class="banner-wrap">
     <%= image_tag  "posts-show/post-detail-banner.png" %>
-  </div>
+  </div> -->
   <div class="main-wrap">
     <div class="main">
       <div class="title-box bb-1px">
-        <h2 class="title">Markdown快速入门</h2>
-        <p class="time">2017年05月21日发布</p>
+        <h2 class="title"><%= @section.section_name %></h2>
+        <p class="time"><%= format_time(@section.created_at) %> 发布</p>
       </div>
       <div class="body">
         <div class="markdown">
@@ -19,136 +19,139 @@
       </div>
     </div>
     <div class="side">
-      <div class="important-box">
-        <div class="header bb-1px">
-          <span class="title">划重点</span>
-          <span class="note">
-            <%= image_tag  "posts-show/icon-note.png" %>
-          </span>
-        </div>
-        <div class="body">
-           水稻阿斯顿阿斯顿阿斯顿是啊撒是是 实打实的阿斯顿啊撒啊撒是是是是是 水稻啊撒水稻阿斯顿水稻阿斯顿阿斯 水稻安德森阿斯顿啊大地阿斯顿啊是 的阿斯顿阿斯顿阿斯顿阿斯顿阿斯顿
-        </div>
-      </div>
-
-      <div class="catalog-box">
-        <div class="header">
-          <span class="title">目录</span>
-        </div>
-        <div class="body">
-          <div class="nav-body">
-            <div class="highlight-title" style="top: 81px; height: 27px; display: block;"></div>
-            <ul class="articleIndex">
-              <li class="">
-                <a href="#articleHeader0">什么是 Markdown</a>
-              </li>
-              <li class="">
-                <a href="#articleHeader1">为什么设计 Markdown</a>
-              </li>
-              <li class="">
-                <a href="#articleHeader2">为什么选择 Markdown</a>
-              </li>
-              <li style="list-style:none;">
-                <ul>
-                  <li class="active">
-                    <a href="#articleHeader3">优点</a>
-                  </li>
-                  <li class="">
-                    <a href="#articleHeader4">缺点</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="#articleHeader5">Markdown 基础语法</a>
-              </li>
-              <li style="list-style:none;">
-                <ul>
-                  <li class="">
-                    <a href="#articleHeader6">标题</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <a href="#articleHeader7">第一级标题 &lt;h1&gt;</a>
-              </li>
-              <li style="list-style:none;">
-                <ul>
-                  <li class="">
-                    <a href="#articleHeader8">第二级标题 &lt;h2&gt;</a>
-                  </li>
-                  <li style="list-style:none;">
-                    <ul>
+      <div class="side-box-wrap">
+        <!-- <div class="important-box">
+          <div class="header bb-1px">
+            <span class="title">划重点</span>
+            <span class="note">
+              <%= image_tag  "posts-show/icon-note.png" %>
+            </span>
+          </div>
+          <div class="body">
+            水稻阿斯顿阿斯顿阿斯顿是啊撒是是 实打实的阿斯顿啊撒啊撒是是是是是 水稻啊撒水稻阿斯顿水稻阿斯顿阿斯 水稻安德森阿斯顿啊大地阿斯顿啊是 的阿斯顿阿斯顿阿斯顿阿斯顿阿斯顿
+          </div>
+        </div> -->
+        
+        <div class="catalog-box" id="postsCatalog">
+          <!-- <div class="nav-header">
+                  <span class="title">目录</span>
+                </div>
+                <div class="body">
+                  <div class="nav-body">
+                    <div class="highlight-title" style="top: 81px; height: 27px; display: block;"></div>
+                    <ul class="articleIndex">
                       <li class="">
-                        <a href="#articleHeader9">第六级标题 &lt;h6&gt;</a>
+                        <a href="#articleHeader0">什么是 Markdown</a>
                       </li>
                       <li class="">
-                        <a href="#articleHeader10">强调</a>
+                        <a href="#articleHeader1">为什么设计 Markdown</a>
                       </li>
                       <li class="">
-                        <a href="#articleHeader11">换行</a>
+                        <a href="#articleHeader2">为什么选择 Markdown</a>
+                      </li>
+                      <li style="list-style:none;">
+                        <ul>
+                          <li class="active">
+                            <a href="#articleHeader3">优点</a>
+                          </li>
+                          <li class="">
+                            <a href="#articleHeader4">缺点</a>
+                          </li>
+                        </ul>
                       </li>
                       <li class="">
-                        <a href="#articleHeader12">无序列表</a>
+                        <a href="#articleHeader5">Markdown 基础语法</a>
+                      </li>
+                      <li style="list-style:none;">
+                        <ul>
+                          <li class="">
+                            <a href="#articleHeader6">标题</a>
+                          </li>
+                        </ul>
                       </li>
                       <li class="">
-                        <a href="#articleHeader13">有序列表</a>
+                        <a href="#articleHeader7">第一级标题 &lt;h1&gt;</a>
                       </li>
-                      <li class="">
-                        <a href="#articleHeader14">任务列表</a>
+                      <li style="list-style:none;">
+                        <ul>
+                          <li class="">
+                            <a href="#articleHeader8">第二级标题 &lt;h2&gt;</a>
+                          </li>
+                          <li style="list-style:none;">
+                            <ul>
+                              <li class="">
+                                <a href="#articleHeader9">第六级标题 &lt;h6&gt;</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader10">强调</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader11">换行</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader12">无序列表</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader13">有序列表</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader14">任务列表</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader15">图片</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader16">链接</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader17">区块引用</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader18">行内代码</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader19">多行或代码段</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader20">表格</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader21">删除线</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader22">下划线</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader23">分割线</a>
+                              </li>
+                              <li class="">
+                                <a href="#articleHeader24">反斜杠</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
                       </li>
-                      <li class="">
-                        <a href="#articleHeader15">图片</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader16">链接</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader17">区块引用</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader18">行内代码</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader19">多行或代码段</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader20">表格</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader21">删除线</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader22">下划线</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader23">分割线</a>
-                      </li>
-                      <li class="">
-                        <a href="#articleHeader24">反斜杠</a>
+                      <li style="list-style:none;">
+                        <ul>
+                          <li class="">
+                            <a href="#articleHeader25">其它高级语法</a>
+                          </li>
+                          <li class="">
+                            <a href="#articleHeader26">Markdown 编辑器</a>
+                          </li>
+                          <li class="">
+                            <a href="#articleHeader27">参考资源</a>
+                          </li>
+                        </ul>
                       </li>
                     </ul>
-                  </li>
-                </ul>
-              </li>
-              <li style="list-style:none;">
-                <ul>
-                  <li class="">
-                    <a href="#articleHeader25">其它高级语法</a>
-                  </li>
-                  <li class="">
-                    <a href="#articleHeader26">Markdown 编辑器</a>
-                  </li>
-                  <li class="">
-                    <a href="#articleHeader27">参考资源</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+                  </div>
+                </div> -->
         </div>
       </div>
+     
     </div>
-    <div class="tools">
+    <!-- <div class="tools">
       <div class="list item">
         <%= image_tag  "posts-show/icon-list.png" %>
       </div>
@@ -167,7 +170,16 @@
       <div class="item">
         <%= image_tag  "posts-show/icon-wechat.png" %>
       </div>
-
-    </div>
+    </div> -->
+    <% if !@prevPage.blank? %>
+    <a href="/posts/<%= @prevPage %>" class="navigation navigation-prev ">
+      <i class="fa fa-angle-left"></i>
+    </a>
+    <% end %>
+    <% if !@nextPage.blank? %>
+    <a href="/posts/<%= @nextPage %>" class="navigation navigation-next ">
+      <i class="fa fa-angle-right"></i>
+    </a>
+    <% end %>
   </div>
 </div>

@@ -4,19 +4,17 @@
     <title><%= yield :title %>豆优课堂</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container-fluid1">
+        <%= render "common/flashes" %>
+        <%= render "common/navbar" %>
+        <%= yield %>
+    </div>
+    <%= render "common/footer" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%# Markdown %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-  </head>
-
-  <body>
-    <div class="container-fluid1">
-            <%= render "common/flashes" %>
-            <%= render "common/navbar" %>
-            <%= yield %>
-        </div>
-
-        <%= render "common/footer" %>
   </body>
 </html>
