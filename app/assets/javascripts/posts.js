@@ -98,8 +98,8 @@ $(function () {
             $needActiveLi.addClass("active");
         }
         var footerOffsetTop = $('.footer').offset().top
-        console.log('footerOffsetTop', footerOffsetTop)
-        console.log('top', top)
+        // console.log('footerOffsetTop', footerOffsetTop)
+        // console.log('top', top)
         if (top >= footerOffsetTop - window.innerHeight - 152 - 20){
             $('.catalog-box').css({
                 height:'calc(100vh - 152px - 15px)'
