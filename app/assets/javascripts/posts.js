@@ -1,3 +1,10 @@
+// $(function () {
+//     $.CateNav('#postsMarkdown', '#postsCatalog');//第一个参数为存放文章内容的box,第二个参数为存放生成目录的box	
+// })
+
+
+
+
 $(function () {
     var $article = $('.posts-show-container .markdown');
     var $header = $article.find('h1, h2, h3');
@@ -91,8 +98,8 @@ $(function () {
             $needActiveLi.addClass("active");
         }
         var footerOffsetTop = $('.footer').offset().top
-        console.log('footerOffsetTop', footerOffsetTop)
-        console.log('top', top)
+        // console.log('footerOffsetTop', footerOffsetTop)
+        // console.log('top', top)
         if (top >= footerOffsetTop - window.innerHeight - 152 - 20){
             $('.catalog-box').css({
                 height:'calc(100vh - 152px - 15px)'
@@ -105,5 +112,18 @@ $(function () {
     });
 
     //右侧导航链接高亮end
+
+    // 点击右侧菜单
+    $('#postsCatalog a').click(function (e) {
+        e.preventDefault();
+        $('#postsCatalog').find("li.active").removeClass('active');
+        $(this).parent('li').addClass('active');
+        var currObj = $($(this).attr('href')) || 0;
+        var offsetTop = currObj.offset().top;
+        $('html,body').animate({
+            scrollTop: offsetTop
+        }, 500, 'swing');
+    });
+    // 点击右侧菜单end
 });
 

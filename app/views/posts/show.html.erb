@@ -9,7 +9,7 @@
         <p class="time"><%= format_time(@section.created_at) %> 发布</p>
       </div>
       <div class="body">
-        <div class="markdown">
+        <div id="postsMarkdown" class="markdown">
           <% if @section.content %>
             <%= markdown(@section.content) %>
           <% else %>
