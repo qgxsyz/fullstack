@@ -52,10 +52,10 @@ $(function () {
         setSidePosition()
     })
     function setSidePosition(){
-        if (!$article) {
+        if (!$article.length > 0) {
             return;
         }
-        if (!$('#postsSide')){
+        if ($('#postsSide').length > 0) {
             return;
         }
         var sideOffsetTop = $('#postsSide').offset().top - $(document).scrollTop();

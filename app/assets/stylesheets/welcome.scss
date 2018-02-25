@@ -7,16 +7,17 @@
 	position: relative;
   .jumb{
   	position: absolute;
-  	top: 40%;
+    top: 56%;
+    transform: translateY(-50%);
   	width: 100%;
   	text-align: center;
     .title{
-      	font-size: 48px;
+      	font-size: 3em;
       	font-weight: 600;
       	color: #fff;
     }
     .detail{
-    	font-size: 20px;
+    	font-size: 1.25em;
       	font-weight: 500;
       	color: #fefffe;
       	margin: 30px 0 40px;
@@ -28,7 +29,7 @@
       border-radius: 6px;
       background-color: #1965b5;
       display: inline-block;
-      font-size: 18px;
+      font-size: 1.15em;
 			color: #fefffe;
     }
   }
