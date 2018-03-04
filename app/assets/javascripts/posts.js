@@ -58,7 +58,6 @@ $(function () {
         if (!$article) {
             return;
         }
-        // document.getElementById("postsSide")
         var $postsSide = $('#postsSide');
         var sideOffsetTop = null;
         if($postsSide.length){
