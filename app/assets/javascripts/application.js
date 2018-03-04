@@ -18,8 +18,4 @@
 //= require bootstrap/modal
 
 //= require cable
-//= require admin/sections
 //= require base
-//= require posts
-
-
