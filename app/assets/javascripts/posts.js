@@ -1,5 +1,5 @@
 // $(function () {
-//     $.CateNav('#postsMarkdown', '#postsCatalog');//第一个参数为存放文章内容的box,第二个参数为存放生成目录的box	
+//     $.CateNav('#postsMarkdown', '#postsCatalog');//第一个参数为存放文章内容的box,第二个参数为存放生成目录的box
 // })
 
 $(function () {
@@ -11,7 +11,7 @@ $(function () {
     function articleIndex() {
         var _html = '<div class="nav-header"><span class="title">目录</span></div><div class="body"><div class="nav-body"><div id="postsActiveMenu" class="highlight-title" style="top:0;height:27px;display:block"></div><ul id="articleIndex" class="articleIndex"></ul></div></div>';
         $('#postsCatalog').append(_html);
-        
+
         var _tagLevel = 1;                  // 最初的level
         var _$wrap = $('#articleIndex');    // 最初的wrap
         $header.each(function (index) {
@@ -49,18 +49,22 @@ $(function () {
     //动态设置side的位置
     setSidePosition();
     $(window).scroll(function () {
+        if (!$('#postsSide').length){
+            return;
+        }
         setSidePosition()
     })
     function setSidePosition(){
         if (!$article) {
             return;
         }
-        if (!$('#postsSide')){
-            return;
+        // document.getElementById("postsSide")
+        var $postsSide = $('#postsSide');
+        var sideOffsetTop = null;
+        if($postsSide.length){
+          sideOffsetTop = $postsSide.offset().top - $(document).scrollTop();
         }
-        var sideOffsetTop = $('#postsSide').offset().top - $(document).scrollTop();
         var $side = $('.side-box-wrap');
-        // console.log('sideOffsetTop:', sideOffsetTop)
         if (sideOffsetTop <= 0) {
             $side.css({
                 position: 'fixed',
@@ -94,7 +98,9 @@ $(function () {
         if (currentId && currentLink.attr("href") != currentId) {
             currentLi.removeClass("active");
             var $needActiveLi = $menu.find('[href="' + currentId + '"]').parent('li');
-            var titleOffsetTop = $needActiveLi.offset().top - $('#articleIndex').offset().top
+            if($needActiveLi.length){
+              var titleOffsetTop = $needActiveLi.offset().top - $('#articleIndex').offset().top
+            }
             $('#postsActiveMenu').css({
                 top: titleOffsetTop
             })
@@ -129,4 +135,3 @@ $(function () {
     });
     // 点击右侧菜单end
 });
-

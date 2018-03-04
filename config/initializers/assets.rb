@@ -13,4 +13,3 @@ Rails.application.config.assets.version = '1.0'
 # Admin common css、js
 Rails.application.config.assets.precompile += %w( admin/common.scss )
 Rails.application.config.assets.precompile += %w( admin/common.js )
-Rails.application.config.assets.precompile += %w( posts.js )

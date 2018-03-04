@@ -17,6 +17,7 @@ mixpanel.init("5205c93e4369da19e0a524ba6b874026");</script>
         <%= render "common/flashes" %>
         <%= render "common/navbar" %>
         <%= yield %>
+        <%= yield :js %>
     </div>
     <%= render "common/footer" %>
     <script type="text/javascript">
