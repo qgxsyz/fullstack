@@ -4,11 +4,16 @@
 
 $(function () {
     var $article = $('.posts-show-container .markdown');
-    var $header = $article.find('h1, h2, h3,h4,h5');
-
+    var $header = $article.find('h1, h2, h3,h4,h5') || [];
+    if (!$article || $header.length == 0){
+        return;
+    }
     // 目录生成
     articleIndex();
     function articleIndex() {
+        if ($header.length == 0) {
+            return;
+        }
         var _html = '<div class="nav-header"><span class="title">目录</span></div><div class="body"><div class="nav-body"><div id="postsActiveMenu" class="highlight-title" style="top:0;height:27px;display:block"></div><ul id="articleIndex" class="articleIndex"></ul></div></div>';
         $('#postsCatalog').append(_html);
         
@@ -75,38 +80,44 @@ $(function () {
     //右侧导航链接高亮
     $(window).scroll(function () {
         var $menu = $("#articleIndex");
-        var top = $(document).scrollTop();
+        var top = $(window).scrollTop();
         var currentId = ""; //滚动条现在所在位置的item id
         $header.each(function () {
             var m = $(this);
-            //注意：m.offset().top代表每一个item的顶部位置
-            if (top > m.offset().top - 30) {
+            //注意：m.offset().top代表每一个item到文档顶部的距离
+            if (top > m.offset().top - 5) {
                 currentId = "#" + m.attr("id");
+                var currentLi = $menu.find("li.active");
+                var currentLinkId = currentLi.find('a').attr("href");
+                if (currentId && currentLinkId && currentLinkId != currentId) {
+                    currentLi.removeClass("active");
+                    var $needActiveLi = $menu.find('[href="' + currentId + '"]').parent('li');
+                    var titleOffsetTop = $needActiveLi.offset().top - $('#articleIndex').offset().top
+                    $('#postsActiveMenu').css({
+                        top: titleOffsetTop
+                    })
+                    $needActiveLi.addClass("active");
+                }
             } else {
                 return false;
             }
         });
 
-        var currentLi = $menu.find("li.active");
-        var currentLink = currentLi.find('a');
-        if (currentId && currentLink.attr("href") != currentId) {
-            currentLi.removeClass("active");
-            var $needActiveLi = $menu.find('[href="' + currentId + '"]').parent('li');
-            var titleOffsetTop = $needActiveLi.offset().top - $('#articleIndex').offset().top
-            $('#postsActiveMenu').css({
-                top: titleOffsetTop
-            })
-            $needActiveLi.addClass("active");
-        }
-        var footerOffsetTop = $('.footer').offset().top
-        // console.log('footerOffsetTop', footerOffsetTop)
-        // console.log('top', top)
-        if (top >= footerOffsetTop - window.innerHeight - 152 - 20){
-            $('.catalog-box').css({
+      
+        var $footer = $('#footer');
+        var footerHeight = $footer.height();
+        var footerOffsetTop = $footer.offset().top;
+        var windowHeight = window.innerHeight
+        
+        var $postsCatalog = $('#postsCatalog');
+        // console.log('top + windowHeight:', top + windowHeight)
+        // console.log('footerOffsetTop + footerHeight:', footerOffsetTop + footerHeight)
+        if ((top + windowHeight) >= (footerOffsetTop)){
+            $postsCatalog.css({
                 height:'calc(100vh - 152px - 15px)'
             })
         }else {
-            $('.catalog-box').css({
+            $postsCatalog.css({
                 height: '100vh'
             })
         }
