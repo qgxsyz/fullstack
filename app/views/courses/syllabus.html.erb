@@ -1,5 +1,4 @@
 <%= title "教材目录 - " %>
-<!-- <%= render :partial => "course_item" %> -->
 <div class="container_wrap">
     <h4 style="margin: 20px 0;"><%= @course.course_name %></h4>
 		<div class="syllabus-list">
@@ -38,4 +37,12 @@
         <% end %>
 			</div>
 		</div>
+    <%= content_for :js do %>
+  	<script type="text/javascript">
+  	mixpanel.track_links(".syllabus-list a", "Clicked top learn center link", function(element) {
+  		return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+  	});
+  	</script>
+
+  	<% end %>
 	</div>

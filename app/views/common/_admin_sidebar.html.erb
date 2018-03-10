@@ -7,6 +7,7 @@
       <!-- Optionally, you can add icons to the links -->
       <li class="<%= is_sidebar_active(["dashboard", "courses", "chapters", "sections"]) %>"><a href="<%= admin_dashboard_path %>"><i class="fa fa-th"></i> <span>课程管理</span></a></li>
       <li class="<%= is_sidebar_active(["assignments"]) %>"><a href="<%= admin_assignments_path %>"><i class="fa fa-edit"></i> <span>作业管理</span></a></li>
+      <li class="<%= is_sidebar_active(["tools"]) %>"><a href="<%= admin_tools_path %>"><i class="fa fa-internet-explorer"></i> <span>网站分析工具</span></a></li>
 
       <!-- <li class="treeview">
         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

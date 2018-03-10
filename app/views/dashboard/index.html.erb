@@ -50,4 +50,13 @@
 			<% end %>
 		</ul>
 	</div>
+	<!-- mixpanel -->
+	<%= content_for :js do %>
+	<script type="text/javascript">
+	mixpanel.track_links(".learn_center a", "Clicked top learn center link", function(element) {
+		return { text: $(element).html().replace(/(<([^>]+)>)/ig, "").trim() }
+	});
+	</script>
+
+	<% end %>
 	<!-- 学习中心 end -->

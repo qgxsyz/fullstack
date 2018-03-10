@@ -19,6 +19,3 @@
 
 //= require cable
 //= require base
-//= require posts
-
-

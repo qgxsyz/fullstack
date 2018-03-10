@@ -31,7 +31,7 @@
             水稻阿斯顿阿斯顿阿斯顿是啊撒是是 实打实的阿斯顿啊撒啊撒是是是是是 水稻啊撒水稻阿斯顿水稻阿斯顿阿斯 水稻安德森阿斯顿啊大地阿斯顿啊是 的阿斯顿阿斯顿阿斯顿阿斯顿阿斯顿
           </div>
         </div> -->
-        
+
         <div class="catalog-box" id="postsCatalog">
           <!-- <div class="nav-header">
                   <span class="title">目录</span>
@@ -149,7 +149,7 @@
                 </div> -->
         </div>
       </div>
-     
+
     </div>
     <!-- <div class="tools">
       <div class="list item">
@@ -183,3 +183,6 @@
     <% end %>
   </div>
 </div>
+<%= content_for :js do %>
+  <%= javascript_include_tag "posts" %>
+<% end %>
