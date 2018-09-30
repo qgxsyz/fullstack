@@ -2,7 +2,7 @@
   <!-- <div class="banner-wrap">
     <%= image_tag  "posts-show/post-detail-banner.png" %>
   </div> -->
-  <div class="main-wrap">
+  <div class="main-wrap" id="postsMainWrap">
     <div class="main">
       <div class="title-box bb-1px">
         <h2 class="title"><%= @section.section_name %></h2>
@@ -151,26 +151,33 @@
       </div>
 
     </div>
-    <!-- <div class="tools">
-      <div class="list item">
+    <div class="tools" id="postsToolBar">
+      <div class="list item" id="postsChapters">
         <%= image_tag  "posts-show/icon-list.png" %>
+        <%= image_tag  "posts-show/icon-list-active.png", class: "img-on" %>
       </div>
-      <div class="item">
+      <div class="item" id="postsPraise">
         <%= image_tag  "posts-show/icon-praise.png" %>
+        <%= image_tag  "posts-show/icon-praise-active.png", class: "img-on" %>
       </div>
-      <div class="item">
+      <div class="item" id="postsLike">
         <%= image_tag  "posts-show/icon-like.png" %>
+        <%= image_tag  "posts-show/icon-like-active.png", class: "img-on" %>
       </div>
-      <div class="item">
+      <div class="item" id="postsComment">
         <%= image_tag  "posts-show/icon-write.png" %>
+        <%= image_tag  "posts-show/icon-write-active.png", class: "img-on" %>
       </div>
-      <div class="item">
+      <!-- <div class="item">
         <%= image_tag  "posts-show/icon-weibo.png" %>
       </div>
       <div class="item">
         <%= image_tag  "posts-show/icon-wechat.png" %>
-      </div>
-    </div> -->
+      </div> -->
+    </div>
+    <div class="posts-chapter" id="postsChapter">
+
+    </div>
     <% if !@prevPage.blank? %>
     <a href="/posts/<%= @prevPage %>" class="navigation navigation-prev ">
       <i class="fa fa-angle-left"></i>

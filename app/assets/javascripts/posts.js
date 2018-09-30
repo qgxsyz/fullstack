@@ -139,4 +139,23 @@ $(function () {
         }, 500, 'swing');
     });
     // 点击右侧菜单end
+
+    // 设置左侧工具栏的位置
+    (function setPostsToolBarPosition() {
+        var windowWidth = window.innerWidth;
+        var mainWidth = $('#postsMainWrap').outerWidth();
+        var left = (windowWidth - mainWidth) / 2 - 15 - 24;
+        var $toolbar = $('#postsToolBar');
+        $toolbar.css({
+            left: left
+        })
+    })()
+
+    //设置左侧工具栏鼠标悬停效果
+    $('#postsToolBar .item').hover(function () {
+        $(this).addClass('active');
+    }, function () {
+        $(this).removeClass('active');
+    });
+
 });
